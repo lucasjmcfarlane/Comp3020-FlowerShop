@@ -1,42 +1,12 @@
 .carousel{
     background: #A3D8B4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
 .slide{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
 }
+
 .slide img{
     width: 450px;
-}
-
-.homepage-section-header{
-    display: flex;
-    justify-content: center;
-}
-
-.featured-items-grid{
-    display: grid;
-    gap: 20px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-.flower-box {
-    display: flex;
-    width: min(100%, 750px);
-    justify-content: space-around;
-    align-items: center;
-    background: #FF7A8B;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
-}
-.flower-box img{
-    width: max(200px, 50%);
-    margin-right: 50px;
 }

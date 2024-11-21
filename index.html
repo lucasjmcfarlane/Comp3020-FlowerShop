@@ -2,35 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flower Shop: Featured & Trending</title>
 
     <script type="text/javascript" src="scripts/index.js"></script>
-    <link rel="stylesheet" href="styles/header.css">
+
+    <link rel="stylesheet" href="styles/center-div.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/flower-box-grid.css">
 </head>
 
 <body>
 
-    <nav class="navigation">
+    <nav class="navigation center-div">
         <h1 style="margin-left: 30px">Flower Shop</h1>
 
         <div>
-            <a href="index.html" class="navItem">Featured & Trending</a>
-            <a href="index.html" class="navItem">Occasions</a>
-            <a href="index.html" class="navItem">Holidays</a>
+            <a href="index.html" class="nav-item">Featured & Trending</a>
+            <a href="html/occasions.html" class="nav-item">Occasions</a>
+            <a href="html/holidays.html" class="nav-item">Holidays</a>
         </div>
 
         <button style="margin-right: 30px">Create a Custom Bouquet</button>
     </nav>
 
 
-    <div class="carousel">
+    <div class="carousel center-div">
 
         <h1>Trending</h1>
 
         <div class="slides">
 
-            <div class="slide" id="slide1">
+            <div class="slide center-div" id="slide1">
                 <img src="assets/bouquet.png" alt="">
                 <div>
                     <h1>Bouquet 1</h1>
@@ -38,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="slide" id="slide2">
+            <div class="slide center-div" id="slide2">
                 <img src="assets/bouquet.png" alt="">
                 <div>
                     <h1>Bouquet 2</h1>
@@ -46,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="slide" id="slide3">
+            <div class="slide center-div" id="slide3">
                 <img src="assets/bouquet.png" alt="">
                 <div>
                     <h1>Bouquet 3</h1>
@@ -62,50 +65,49 @@
         </div>
 
         <div class="radio-buttons">
-            <input type="radio" name="carousel-radio-button" checked="checked" onclick="showSlide(1)">
-            <input type="radio" name="carousel-radio-button" onclick="showSlide(2)">
-            <input type="radio" name="carousel-radio-button" onclick="showSlide(3)">
+            <input type="radio" id = "r1" name="carousel-radio-button" checked="checked" onclick="showSlide(1)"><label for="r1"></label>
+            <input type="radio" id = "r2" name="carousel-radio-button" onclick="showSlide(2)"><label for="r2"></label>
+            <input type="radio" id = "r3" name="carousel-radio-button" onclick="showSlide(3)"><label for="r3"></label>
         </div>
 
     </div>
 
 
-    <h1 class="homepage-section-header">Featured Items</h1>
-    <div class="featured-items-grid">
+    <h1 class="center">Featured Items</h1>
+    <div class="flower-box-grid">
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test1</h1>
         </div>
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test2</h1>
         </div>
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test3</h1>
         </div>
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test4</h1>
         </div>
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test5</h1>
         </div>
 
-        <div class="flower-box">
+        <div class="flower-box center-div">
             <img src="./assets/bouquet.png" alt="">
             <h1>test6</h1>
         </div>
 
     </div>
 
-    
 </body>
 
 </html>
