@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="./styles/index.css">
+
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
 
     <nav class="navigation">
-
         <h1 style="margin-left: 30px">Flower Shop</h1>
 
         <div>
@@ -19,48 +21,91 @@
         </div>
 
         <button style="margin-right: 30px">Create a Custom Bouquet</button>
-
     </nav>
-    <div class="TrendingSlide">
-        <div class="tItem" id="tItem1">
-            <img src="" alt="item1">
-            <p>item1</p>
+
+
+    <div class="carousel">
+
+        <h1>Trending</h1>
+
+        <div class="slides">
+
+            <div class="slide" id="slide1">
+                <img src="assets/bouquet.png" alt="">
+                <div>
+                    <h1>Bouquet 1</h1>
+                    <h3>It's a good bouquet</h3>
+                </div>
+            </div>
+
+            <div class="slide" id="slide2">
+                <img src="assets/bouquet.png" alt="">
+                <div>
+                    <h1>Bouquet 2</h1>
+                    <h3>It's a good bouquet</h3>
+                </div>
+            </div>
+
+            <div class="slide" id="slide3">
+                <img src="assets/bouquet.png" alt="">
+                <div>
+                    <h1>Bouquet 3</h1>
+                    <h3>It's a good bouquet</h3>
+                </div>
+            </div>
+
         </div>
-        <div class="tItem" id="tItem2">
-            <img src="" alt="item2">
-            <p>item2</p>
+
+        <div class="buttons">
+            <button type="button">Customize</button>
+            <button type="button">Add to Cart</button>
         </div>
-        <div class="tItem" id="tItem3">
-            <img src="" alt="item3">
-            <p>item3</p>
+
+        <div class="radio-buttons">
+            <input type="radio" name="carousel-radio-button" checked="checked" onclick="showSlide(1)">
+            <input type="radio" name="carousel-radio-button" onclick="showSlide(2)">
+            <input type="radio" name="carousel-radio-button" onclick="showSlide(3)">
         </div>
+
     </div>
-    <div class="featuredPage">
-        <div class="fItem" id="fItem1">
-            <img src="" alt="item1">
-            <p>item1</p>
+
+
+    <h1 class="homepage-section-header">Featured Items</h1>
+    <div class="featured-items-grid">
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test1</h1>
         </div>
-        <div class="fItem" id="fItem2">
-            <img src="" alt="item2">
-            <p>item2</p>
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test2</h1>
         </div>
-        <div class="fItem" id="fItem3">
-            <img src="" alt="item3">
-            <p>item3</p>
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test3</h1>
         </div>
-        <div class="fItem" id="fItem4">
-            <img src="" alt="item4">
-            <p>item4</p>
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test4</h1>
         </div>
-        <div class="fItem" id="fItem5">
-            <img src="" alt="item5">
-            <p>item5</p>
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test5</h1>
         </div>
-        <div class="fItem" id="fItem6">
-            <img src="" alt="item6">
-            <p>item6</p>
+
+        <div class="flower-box">
+            <img src="./assets/bouquet.png" alt="">
+            <h1>test6</h1>
         </div>
+
     </div>
+
+    
 </body>
 
 </html>
