@@ -1,37 +1,19 @@
 window.onload = function () {
-    slide2 = document.getElementById("slide1");
-    slide2 = document.getElementById("slide2");
-    slide3 = document.getElementById("slide3");
-    slide1.style.display = "flex";
-    slide2.style.display = "none";
-    slide3.style.display = "none";
+    showSlide();
 }
 
-function showSlide(index) {
-    slide1 = document.getElementById("slide1");
-    slide2 = document.getElementById("slide2");
-    slide3 = document.getElementById("slide3");
+function showSlide() {
+    const slide1 = document.getElementById("slide1");
+    const slide2 = document.getElementById("slide2");
+    const slide3 = document.getElementById("slide3");
+    const radio1 = document.getElementById("r1");
+    const radio2 = document.getElementById("r2");
 
     slide1.style.display = "none";
     slide2.style.display = "none";
     slide3.style.display = "none";
 
-    switch (index) {
-        case 1:
-            slide1.style.display = "flex";
-            break;
-        case 2:
-            slide2.style.display = "flex";
-            break;
-        case 3:
-            slide3.style.display = "flex";
-            break;
-        default:
-            slide1.style.display = "flex";
-            break;
-    }
-
-
-
-
+    if (radio1.checked){slide1.style.display = "flex";}
+    else if (radio2.checked){slide2.style.display = "flex";}
+    else{slide3.style.display = "flex";}
 }

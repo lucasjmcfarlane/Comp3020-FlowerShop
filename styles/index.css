@@ -4,6 +4,7 @@
 }
 
 .slide{
+    display: none;
     flex-direction: row;
 }
 .TrendingSlide {
