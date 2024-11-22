@@ -6,6 +6,19 @@
 .slide{
     flex-direction: row;
 }
+.TrendingSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.featuredPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navItem{
+    margin: 10px 
+}
 
 .slide img{
     width: 450px;
