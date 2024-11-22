@@ -8,22 +8,44 @@
 
     <link rel="stylesheet" href="styles/center-div.css">
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/flower-box-grid.css">
+    <link rel="stylesheet" href="styles/navbar.css">
 </head>
 
 <body>
 
-    <nav class="navbar center-div">
-        <h1 style="margin-left: 30px">Flower Shop</h1>
+    <nav class="navigation">
 
-        <div>
-            <a href="index.html" class="nav-item">Featured & Trending</a>
-            <a href="html/occasions.html" class="nav-item">Occasions</a>
-            <a href="html/holidays.html" class="nav-item">Holidays</a>
+        <h1><a class="logo" href="index.html">Flower Shop</a></h1>
+
+        <div class="bar">
+            <nav class="dropdown1">
+                <button class="navItem1">Featured & Trending</button>
+                <div class="navItem1-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </nav>
+            <nav class="dropdown2">
+                <button class="navItem2">Occasions</button>
+                <div class="navItem2-content">
+                    <a href="#">Wedding</a>
+                    <a href="#">Birthday</a>
+                    <a href="#">Anniversiry</a>
+                </div>
+            </nav>
+            <nav class="dropdown3">
+                <button class="navItem3">Holidays</button>
+                <div class="navItem3-content">
+                    <a href="#">Christmas</a>
+                    <a href="#">Halloween</a>
+                    <a href="#">Easter</a>
+                </div>
+            </nav>
         </div>
-
-        <button style="margin-right: 30px">Create a Custom Bouquet</button>
+        
+        <h1><a class="custom" href="index.html">Create a Custom Bouquet</a></h1>
     </nav>
 
 
