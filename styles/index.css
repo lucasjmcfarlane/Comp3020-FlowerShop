@@ -1,25 +1,12 @@
-#header{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+.carousel{
+    background: #A3D8B4;
+    flex-direction: column;
 }
-.navigation {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+
+.slide{
+    flex-direction: row;
 }
-.TrendingSlide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.featuredPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navItem{
-    margin: 10px 
+
+.slide img{
+    width: 450px;
 }

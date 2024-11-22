@@ -1,0 +1,18 @@
+.flower-box {
+    justify-content: space-around;
+    width: min(100%, 750px);
+    background: #FF7A8B;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.flower-box img{
+    width: max(200px, 50%);
+    margin-right: 50px;
+}
+
+.flower-box-grid{
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
