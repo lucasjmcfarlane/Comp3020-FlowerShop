@@ -1,0 +1,22 @@
+
+.popup-btn {
+    float: right;
+    margin: 0.2em;
+}
+
+#popup-image {
+    float: left;
+}
+
+#popup-description {
+    float: left;
+    width:300px;
+    margin-left: 0.5em;
+}
+
+#popup-btn-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin:1em;
+}
