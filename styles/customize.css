@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_container{
+    padding: 40px;
+    color: red;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.selection_buttons{
+    margin-left: 15px;
+}
+
+.selection_container{
+    width: 70%;
+    flex: 2; /* Adjusts the size relative to preview container */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd; /* Optional: Adds a dividing line */
+}
+
+.preview_container{
+    width: 35%;
+    padding: 20px;
+    top: 0;
+    /* position: sticky; */
+}
+
+.selection_tabs{
+    display: flex;
+    padding-bottom: 20px;
+}
+.selection_container{
+    padding: 20px;
+}
+
+.search_bar_input{
+    width: 97.5%;
+    height: 35px;
+    padding-left: 15px;
+}
+
+
+.select_grid{
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.select_item{
+    padding: 15px;
+    width: 31%;
+    height: 200px;
+    /* border: 1px solid black; */
+    margin: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.item{
+    justify-content: center;
+    text-align: center;
+}
+
+.select_checkbox input{
+    display: block;
+}
+
