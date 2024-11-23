@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize Flower</title>
+    <script type="text/javascript" src="../scripts/customize.js"></script>
     <link rel="stylesheet" href="../styles/customize.css">
     <link rel="stylesheet" href="../styles/navbar.css">
 
@@ -60,7 +61,7 @@
 
             <div class="search">
                 <div class="search-bar">
-                    <input type="text" name="" placeholder="Search..." class="search_bar_input">
+                    <input type="search" id="search_bar_input" placeholder="Search..." class="search_bar_input">
                 </div>
             </div>
 
@@ -71,6 +72,11 @@
                         <input type="checkbox">
                     </div> 
                     <div class="item">Item 1</div>
+                    <div class="stepper">
+                        <button class="stepper-btn-minus">-</button>
+                        <input type="number" id="points" name="points" value="0">
+                        <button class="stepper-btn-plus">+</button>
+                    </div>
                 </div>
 
                 <div class="select_item">
