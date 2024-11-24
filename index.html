@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>Flower Shop: Featured & Trending</title>
 
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/carousel.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
 
-    <link rel="stylesheet" href="styles/center-div.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/flower-box-grid.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/section-title.css">
+    <link rel="stylesheet" href="styles/flower-box-grid.css">
     <link rel="stylesheet" href="styles/popup.css">
 </head>
+
 
 <body>
 
@@ -95,33 +97,28 @@
 
     <h1 class="center-div">Featured Items</h1>
     <div class="flower-box-grid">
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet1.png" alt="Bouquet 1">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet1.png', 'Bouquet 1', 'This is a description for Bouquet 1')">
+            <img  src="./assets/bouquet1.png" alt="Bouquet 1">
             <h1>Bouquet 1</h1>
         </div>
-
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet2.png" alt="Bouquet 2">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet2.png', 'Bouquet 2', 'This is a description for Bouquet 2')">
+            <img  src="./assets/bouquet2.png" alt="Bouquet 2">
             <h1>Bouquet 2</h1>
         </div>
-
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet3.png" alt="Bouquet 3">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet3.png', 'Bouquet 3', 'This is a description for Bouquet 3')">
+            <img  src="./assets/bouquet3.png" alt="Bouquet 3">
             <h1>Bouquet 3</h1>
         </div>
-
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet4.png" alt="Bouquet 4">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet4.png', 'Bouquet 4', 'This is a description for Bouquet 4')">
+            <img  src="./assets/bouquet4.png" alt="Bouquet 4">
             <h1>Bouquet 4</h1>
         </div>
-
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet5.png" alt="Bouquet 5">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet5.png', 'Bouquet 5', 'This is a description for Bouquet 5')">
+            <img  src="./assets/bouquet5.png" alt="Bouquet 5">
             <h1>Bouquet 5</h1>
         </div>
-
-        <div class="flower-box center-div">
-            <img onclick="openPopUp(this.src, this.alt)" src="./assets/bouquet6.png" alt="Bouquet 6">
+        <div class="flower-box" onclick="openPopUp('./assets/bouquet6.png', 'Bouquet 6', 'This is a description for Bouquet 6')">
+            <img  src="./assets/bouquet6.png" alt="Bouquet 6">
             <h1>Bouquet 6</h1>
         </div>
     </div>
@@ -130,19 +127,15 @@
     <dialog id="popup-dialog">
         <button onclick="closePopUp()" id="popup-close-btn" class="popup-btn">&#10006</button>
         <h2 id="popup-title"></h2>
-
         <div>
             <img src="" alt="" id="popup-image" width=300px>
-            <p id="popup-description">Some sort of description here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p id="popup-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-
         <div id="popup-btn-container">
             <button id="popup-add-cart-btn" class="popup-btn">Add to Cart</button>
             <button id="popup-custom-btn" class="popup-btn" onclick = "window.location.href='./html/customize.html';" >Customize</button>
         </div>
     </dialog>
-
-    <script src="scripts/popup.js"></script>
 
 </body>
 </html>
