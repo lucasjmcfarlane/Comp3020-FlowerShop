@@ -1,74 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .main_container{
-    padding: 40px;
-    color: red;
+    height: 85vh;
     display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.selection_buttons{
-    margin-left: 15px;
 }
 
 .selection_container{
-    width: 70%;
-    flex: 2; /* Adjusts the size relative to preview container */
+    width: 60%;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #ddd; /* Optional: Adds a dividing line */
-}
-
-.preview_container{
-    width: 35%;
-    padding: 20px;
-    top: 0;
-    /* position: sticky; */
+    border-right: 1px solid gray; /* Optional: Adds a dividing line */
+    padding-right: 15px;
 }
 
 .selection_tabs{
-    display: flex;
-    padding-bottom: 20px;
-}
-.selection_container{
-    padding: 20px;
+    margin-top: 15px;
 }
 
 .search_bar_input{
-    width: 97.5%;
-    height: 35px;
-    padding-left: 15px;
+    margin-top: 15px;
+    width: 95%;
+    height: 40px;
 }
 
-
 .select_grid{
-    padding-top: 40px;
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-y: auto;
 }
 
 .select_item{
+    background: lightgray;
     padding: 15px;
-    width: 31%;
-    height: 200px;
-    /* border: 1px solid black; */
-    margin: 5px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-
+    width: 250px;
+    height: 250px;
+    margin: 0 10px 10px 0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
+
+.item-row{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .item{
-    justify-content: center;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.select_checkbox input{
-    display: block;
+.item img {
+    height: 180px;
 }
 
+.preview_container{
+    margin-left: 15px;
+}

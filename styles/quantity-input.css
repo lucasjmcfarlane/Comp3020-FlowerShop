@@ -1,0 +1,15 @@
+.quantity-input{
+    display: none;
+}
+
+.quantity-value {
+    width: 50px;
+    appearance: textfield;
+    text-align: center;
+    color: black;
+}
+
+.quantity-button{
+    width: 25px;
+    height: 25px;
+}

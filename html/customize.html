@@ -3,227 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Flower</title>
-    <link rel="stylesheet" href="../styles/customize.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
+    <title>Flower Shop: Customize</title>
 
+    <script type="text/javascript" src="../scripts/customize.js"></script>
+    <script type="text/javascript" src="../scripts/quantity-input.js"></script>
+
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/customize.css">
+    <link rel="stylesheet" href="../styles/quantity-input.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navigation">
-
-            <h1><a class="logo" href="../index.html">Flower Shop</a></h1>
-    
-            <div class="bar">
-                <nav class="dropdown1">
-                    <button class="navItem1">Featured & Trending</button>
-                    <div class="navItem1-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </nav>
-                <nav class="dropdown2">
-                    <button class="navItem2">Occasions</button>
-                    <div class="navItem2-content">
-                        <a href="./wedding.html">Wedding</a>
-                        <a href="./birthday.html">Birthday</a>
-                        <a href="./anniversary.html">Anniversary</a>
-                    </div>
-                </nav>
-                <nav class="dropdown3">
-                    <button class="navItem3">Holidays</button>
-                    <div class="navItem3-content">
-                        <a href="./christmas.html">Christmas</a>
-                        <a href="./halloween.html">Halloween</a>
-                        <a href="./easter.html">Easter</a>
-                    </div>
-                </nav>
+<nav class="navbar">
+    <h1><a class="logo" href="../index.html">Flower Shop</a></h1>
+    <div class="categories">
+        <nav class="dropdown">
+            <button class="nav-item navbar-button">Featured & Trending</button>
+            <div class="nav-item-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
             </div>
-            
-            <h1><a class="custom" href="customize.html">Create a Custom Bouquet</a></h1>
         </nav>
-        
-    </header>
-       
+        <nav class="dropdown">
+            <button class="nav-item navbar-button">Occasions</button>
+            <div class="nav-item-content">
+                <a href="./wedding.html">Wedding</a>
+                <a href="./birthday.html">Birthday</a>
+                <a href="./anniversary.html">Anniversary</a>
+            </div>
+        </nav>
+        <nav class="dropdown">
+            <button class="nav-item navbar-button">Holidays</button>
+            <div class="nav-item-content">
+                <a href="./christmas.html">Christmas</a>
+                <a href="./halloween.html">Halloween</a>
+                <a href="./easter.html">Easter</a>
+            </div>
+        </nav>
+    </div>
+    <h1><a class="custom navbar-button" href="./customize.html">Create a Custom Bouquet</a></h1>
+</nav>
+
+
     <main class="main_container">
         
         <div class="selection_container">
+
             <div class="selection_tabs">
-                <button class="selection_buttons" type="button">Flowers</button>
-                <button class="selection_buttons" type="button">Vases</button>
-                <button class="selection_buttons" type="button">...</button>
-                <button class="selection_buttons" type="button">...</button>    
+                <button type="button">Flowers</button>
+                <button type="button">Vases</button>
+                <button type="button">Ribbons</button>
+                <button type="button">...</button>
             </div>
 
-            <div class="search">
-                <div class="search-bar">
-                    <input type="text" name="" placeholder="Search..." class="search_bar_input">
-                </div>
-            </div>
+            <input type="text" name="" placeholder="Search..." class="search_bar_input">
 
             <div class="select_grid">
 
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> <div class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> <div  class="item">Item 1</div>
-                </div>
-                
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
+                <div id="select-item-1" class="select_item">
+                    <div class="item-row">
+                        <input id="checkbox1" type="checkbox" onclick="checkboxClicked(1)">
+                        <div class="quantity-input" id="quantity-input-1">
+                            <button class="quantity-button" onclick="addToValue('value1', -1)">-</button>
+                            <input class="quantity-value" id="value1" type="number" value="1" disabled>
+                            <button class="quantity-button" onclick="addToValue('value1', 1)">+</button>
+                        </div>
                     </div>
-                    <div  class="item">Item 1</div>
+                    <div class="item">
+                        <p>Item 1</p>
+                        <img src="../assets/flower1.png" alt="">
+                    </div>
                 </div>
 
-                <div class="select_item">
-                    <div class="select_checkbox">
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
+                <div id="select-item-2" class="select_item">
+                    <div class="item-row">
+                        <input id="checkbox2" type="checkbox" onclick="checkboxClicked(2)">
+                        <div class="quantity-input" id="quantity-input-2">
+                            <button class="quantity-button" onclick="addToValue('value2', -1)">-</button>
+                            <input class="quantity-value" id="value2" type="number" value="1" disabled>
+                            <button class="quantity-button" onclick="addToValue('value2', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Item 2</p>
+                        <img src="../assets/flower2.png" alt="">
+                    </div>
                 </div>
 
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
+                    <div id="select-item-3" class="select_item">
+                        <div class="item-row">
+                            <input id="checkbox3" type="checkbox" onclick="checkboxClicked(3)">
+                            <div class="quantity-input" id="quantity-input-3">
+                                <button class="quantity-button" onclick="addToValue('value3', -1)">-</button>
+                                <input class="quantity-value" id="value3" type="number" value="1" disabled>
+                                <button class="quantity-button" onclick="addToValue('value3', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p>Item 3</p>
+                            <img src="../assets/flower3.png" alt="">
+                        </div>
+                    </div>
+
+                <div id="select-item-4" class="select_item">
+                    <div class="item-row">
+                        <input id="checkbox4" type="checkbox" onclick="checkboxClicked(4)">
+                        <div class="quantity-input" id="quantity-input-4">
+                            <button class="quantity-button" onclick="addToValue('value4', -1)">-</button>
+                            <input class="quantity-value" id="value4" type="number" value="1" disabled>
+                            <button class="quantity-button" onclick="addToValue('value4', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Item 4</p>
+                        <img src="../assets/flower2.png" alt="">
+                    </div>
                 </div>
 
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
+                <div id="select-item-5" class="select_item">
+                    <div class="item-row">
+                        <input id="checkbox5" type="checkbox" onclick="checkboxClicked(5)">
+                        <div class="quantity-input" id="quantity-input-5">
+                            <button class="quantity-button" onclick="addToValue('value5', -1)">-</button>
+                            <input class="quantity-value" id="value5" type="number" value="1" disabled>
+                            <button class="quantity-button" onclick="addToValue('value5', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Item 5</p>
+                        <img src="../assets/flower1.png" alt="">
+                    </div>
                 </div>
 
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
 
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-                
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                
+
             </div>
         </div>
 
         <div class="preview_container">
             <h3>Preview</h3>
-            
             <button class="add_to_cart" type="button">Add to cart</button>
         </div>
+
     </main>
 
 </body>
-
 </html>
