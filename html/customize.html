@@ -64,10 +64,16 @@
                     <input type="search" id="search_bar_input" placeholder="Search..." class="search_bar_input">
                 </div>
             </div>
-
+            <div id="filter_btns">
+                <button class="filter_btn active" id="all_btn" onclick="filterSelection('all')"> Show all</button>
+                <button class="filter_btn" onclick="filterSelection('red')"> Red</button>
+                <button class="filter_btn" onclick="filterSelection('blue')"> Blue</button>
+                <button class="filter_btn" onclick="filterSelection('green')"> Green</button>
+                <button class="filter_btn" onclick="filterSelection('yellow')"> Yellow</button>
+              </div>
             <div class="select_grid">
 
-                <div class="select_item">
+                <div class="select_item red">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
@@ -79,146 +85,108 @@
                     </div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item red">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div class="item">Item 1</div>
+                    <div class="item">Item 2</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item red">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
-                    </div> <div class="item">Item 1</div>
+                    </div> <div class="item">Item 3</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item red">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
-                    </div> <div  class="item">Item 1</div>
+                    </div> <div  class="item">Item 4</div>
                 </div>
                 
-                <div class="select_item">
+                <div class="select_item blue">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 5</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item blue">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 6</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item blue">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 7</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item blue">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 8</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item green">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 9</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item green">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 10</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item green">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 11</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item green">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div>
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 12</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item yellow">
                     <div class="select_checkbox">
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 13</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item yellow">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 14</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item yellow">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 15</div>
                 </div>
 
-                <div class="select_item">
+                <div class="select_item yellow">
                     <div class="select_checkbox"> 
                         <input type="checkbox">
                     </div> 
-                    <div  class="item">Item 1</div>
+                    <div  class="item">Item 16</div>
                 </div>
-
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-                <div class="select_item">
-                    <div class="select_checkbox"> 
-                        <input type="checkbox">
-                    </div> 
-                    <div  class="item">Item 1</div>
-                </div>
-                
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
-                <div class="select_item">
-                    <div class="select_checkbox"> <input type="checkbox"></div> <div  class="item">Item 1</div></div>
                 
             </div>
         </div>
