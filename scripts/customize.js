@@ -1,3 +1,24 @@
+class Flower {
+    constructor(id, name, price, color, quantity, isSelected, imageSource) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.color = color;
+        this.quantity = quantity;
+        this.isSelected = isSelected;
+        this.imageSource = imageSource;
+    }
+
+    static plusOne() {
+        this.quantity += 1;
+    }
+    static minusOne() {
+        if (this.quantity > 0) {
+            this.quantity -= 1;
+        }
+    }
+}
+
 function checkboxClicked(index){
 
     const checkbox = document.getElementById("checkbox" + index);
@@ -14,6 +35,54 @@ function checkboxClicked(index){
         selectItem.style.margin = "0 10px 10px 0";
         quantityInput.style.display = "none"
     }
+}
+
+const items = [];
+
+function addItem(item) {
+    items.push(item);
+    
+    if (item["flower-src"]) {
+        addFlowerPreview(item["flower-src"]);
+        console.log(items);
+    }
+}
+
+function removeItem(item) {
+    items.pop();
+    flowers.pop();
+}
+
+const flowers = [];
+
+function addFlowerPreview(flowerSrc) {
+    flowers.push(flowerSrc);
+    console.log(flowers);
+}
+
+function removeFlowerPreview(flowerSrc) {
+    flowers.pop();
+}
+
+function printFlowerPreview() {
+    var preview = document.getElementById("preview-image");
+    preview.innerHTML = "";
+    
+    if (flowers.length > 1) {
+        let multiplier = 90/(flowers.length-1);
+        let rotation = -45;
+        for (let i = 0; i < flowers.length; i++) {
+            preview.innerHTML += "<img src='" + flowers[i] + "' style='transform:rotate(" + rotation + "deg)'; \\>";
+            rotation += (multiplier);
+        }
+    } else if (flowers.length == 1) {
+        preview.innerHTML = "<img src='" + flowers[0] + "'\\>";
+    }
+    
+}
+
+function previewSetup() {
+    setInterval(printFlowerPreview, 1000);
 }
 
 
@@ -34,6 +103,11 @@ window.onload=function(){
             }
         }
     })
+
+    previewSetup();
+
+    // var flower1 = new Flower(1, "item1", 1, "yellow", 0, false, "../assets/flower1.png");
+    // console.log(flower1);
 }
 
 
@@ -86,10 +160,11 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-
-
-
-
-
-
+function addToValue(id, value){
+    const oldValue = document.getElementById(id)
+    oldValue.value = Number(oldValue.value) + Number(value)
+    if (Number(oldValue.value) <= 0){
+        oldValue.value = 1
+    }
+}
 

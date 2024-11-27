@@ -73,14 +73,14 @@
                     <div class="item-row">
                         <input id="checkbox1" type="checkbox" onclick="checkboxClicked(1)">
                         <div class="quantity-input" id="quantity-input-1">
-                            <button class="quantity-button" onclick="addToValue('value1', -1)">-</button>
+                            <button class="quantity-button" onclick="addToValue('value1', -1); removeItem()">-</button>
                             <input class="quantity-value" id="value1" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value1', 1)">+</button>
+                            <button class="quantity-button" onclick="addToValue('value1', 1); addItem({'name': 'item1','flower-src':document.getElementById('item-1-img').src, 'price':1})">+</button>
                         </div>
                     </div>
                     <div class="item">
                         <p>Item 1</p>
-                        <img src="../assets/flower1.png" alt="">
+                        <img id="item-1-img" src="../assets/flower1.png" alt="">
                     </div>
                 </div>
 
@@ -88,14 +88,14 @@
                     <div class="item-row">
                         <input id="checkbox2" type="checkbox" onclick="checkboxClicked(2)">
                         <div class="quantity-input" id="quantity-input-2">
-                            <button class="quantity-button" onclick="addToValue('value2', -1)">-</button>
+                            <button class="quantity-button" onclick="addToValue('value2', -1); removeItem()">-</button>
                             <input class="quantity-value" id="value2" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value2', 1)">+</button>
+                            <button class="quantity-button" onclick="addToValue('value2', 1); addItem({'name': 'item2','flower-src':document.getElementById('item-2-img').src, 'price':1})">+</button>
                         </div>
                     </div>
                     <div class="item">
                         <p>Item 2</p>
-                        <img src="../assets/flower2.png" alt="">
+                        <img id="item-2-img" src="../assets/flower2.png" alt="">
                     </div>
                 </div>
 
@@ -151,6 +151,7 @@
 
         <div class="preview_container">
             <h3>Preview</h3>
+            <div class="preview-image-div" id="preview-image"></div>
             <button class="add_to_cart" type="button">Add to cart</button>
         </div>
 
