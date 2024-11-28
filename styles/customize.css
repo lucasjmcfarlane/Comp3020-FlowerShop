@@ -91,7 +91,6 @@
 .preview-image-div img {
     height: 400px;
     position: absolute;
-    margin: 10em;
     transform-origin: bottom;
 }
 
