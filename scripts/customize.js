@@ -10,7 +10,7 @@ class Flower {
 
     plusOne() {
         const QTY_LIMIT = 5; 
-        if (this.quantity <= QTY_LIMIT) {
+        if (this.quantity < QTY_LIMIT) {
             this.quantity += 1;
         }
     }
