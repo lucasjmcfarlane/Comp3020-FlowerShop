@@ -149,7 +149,6 @@ function updateState(id,index) {
         num = 0
     if (num > 5)
         num = 5
-    console.log(num)
     id.value = num
     allFlowers[index].setQuantity(num)
     printFlowerPreview();
