@@ -1,4 +1,9 @@
-
+window.onload=function(){
+    filterSetup();
+    initializeFlowers();
+    printFlowerImages();
+    printFlowerPreview();
+}
 
 // mini database
 const allFlowers = [];
@@ -82,18 +87,18 @@ function getAllFlowersQuantity() {
 function updateQuantityPlusButton(quantity, index) {
     const button = document.getElementById(PLUS_BUTTON_ELEMENT+index);
     if (quantity >= FLOWER_QTY_LIMIT) {
-        button.hidden = true;
+        button.disabled = true;
     } else {
-        button.hidden = false;
+        button.disabled = false;
     }
 }
 
 function updateQuantityMinusButton(quantity, index) {
     const button = document.getElementById(MINUS_BUTTON_ELEMENT+index);
     if (quantity <= 0) {
-        button.hidden = true;
+        button.disabled = true;
     } else {
-        button.hidden = false;
+        button.disabled = false;
     }
 }
 
@@ -164,23 +169,18 @@ function checkboxClicked(index){
     }
 }
 
-
-window.onload=function(){
-    filterSetup();
-    initializeFlowers();
-    printFlowerImages();
-    printFlowerPreview();
-}
-
-
-function updateState(id,index) {
-    var num = parseInt(id.value)
-    if (id.value == "")
+function updateState(input,index) {
+    var num = parseInt(input.value)
+    if (input.value == "")
         num = 0
     if (num > 5)
         num = 5
-    id.value = num
+    input.value = num
     allFlowers[index].setQuantity(num)
+
+    updateQuantityPlusButton(input.value, index);
+    updateQuantityMinusButton(input.value, index);
+
     printFlowerPreview();
 }
 
