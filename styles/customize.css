@@ -93,3 +93,7 @@
     position: absolute;
     transform-origin: bottom;
 }
+
+.quantity-value::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
