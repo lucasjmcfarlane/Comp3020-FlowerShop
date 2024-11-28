@@ -87,5 +87,5 @@
 .preview-image-div img {
     width: 200px;
     position: absolute;
-    margin: 10em;
+    transform-origin: bottom;
 }
