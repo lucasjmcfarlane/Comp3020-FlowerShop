@@ -54,11 +54,6 @@
     height: 180px;
 }
 
-.preview_container{
-    margin-left: 15px;
-}
-
-
 /* The "show" class is added to the filtered elements */
 .show {
     display: block;
@@ -84,12 +79,22 @@
     color: white;
 }
 
-.preview-image-div img {
-    width: 200px;
-    position: absolute;
-    margin: 10em;
+.preview_container{
+    width: 40%;
+    margin-left: 15px;
 }
 
-.quantity-value::-webkit-inner-spin-button{
+.preview-image-div{
+    margin-left: calc(50% - 70px);
+}
+
+.preview-image-div img {
+    height: 400px;
+    position: absolute;
+    margin: 10em;
+    transform-origin: bottom;
+}
+
+.quantity-value::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
