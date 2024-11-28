@@ -51,6 +51,10 @@ function initializeFlowers(flowers) {
         const element = document.getElementById("qt-val-"+index);
         var currFlower = allFlowers[index];
         element.value = currFlower.quantity;
+        updateState(element,index)
+        if (currFlower.quantity > 0) {
+            const checkbox = document.getElementById("checkbox"+index).click();
+        }
     }
 
 }
@@ -144,10 +148,9 @@ function checkboxClicked(index){
 
 
 window.onload=function(){
-    var url = document.location.href;
+    var url = window.location.href;
+    console.log(url)
     params = url.split('?')[1].split("=")[1].split(",");
-    // console.log(url);
-    console.log(params);
     
     var data = {};
     var tmp;
@@ -155,8 +158,7 @@ window.onload=function(){
          tmp = params[i].split(':');
          data[tmp[0]] = tmp[1];
     }
-    // document.getElementById('here').innerHTML = data.name;
-    console.log(data)
+
     filterSetup();
     initializeFlowers(data);
     printFlowerImages();

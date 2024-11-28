@@ -14,7 +14,6 @@ function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
     description.innerHTML = popupDescription
 
     data = id.getAttribute("value")
-    console.log(data)
 
     dialog.showModal();
 }
@@ -27,12 +26,8 @@ function closePopUp() {
 
 
 function changePage(path) {
-    url = path+'?data=' + data;
-    console.log(url)
+    url = path + '?data=' + data;
 
-
-    // document.location.href = url;
-
-    window.location.href = url
+    window.location.href = url;
 
 }
