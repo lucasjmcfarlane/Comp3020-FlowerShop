@@ -1,0 +1,46 @@
+const items = [];
+
+function addItem(item) {
+    items.push(item);
+    
+    if (item["flower-src"]) {
+        addFlowerPreview(item["flower-src"]);
+        console.log(items);
+    }
+}
+
+function removeItem(item) {
+    console.log(items.indexOf(item.name));
+}
+
+const flowers = [];
+
+function addFlowerPreview(flowerSrc) {
+    flowers.push(flowerSrc);
+    console.log(flowers);
+}
+
+function removeFlowerPreview(flowerSrc) {
+    
+}
+
+function printFlowerPreview() {
+    var preview = document.getElementById("preview-image");
+    preview.innerHTML = "";
+    
+    if (flowers.length > 1) {
+        let multiplier = 90/(flowers.length-1);
+        let rotation = -45;
+        for (let i = 0; i < flowers.length; i++) {
+            preview.innerHTML += "<img src='" + flowers[i] + "' style='transform:rotate(" + rotation + "deg)'; \\>";
+            rotation += (multiplier);
+        }
+    } else if (flowers.length == 1) {
+        preview.innerHTML = "<img src='" + flowers[0] + "'\\>";
+    }
+    
+}
+
+function previewSetup() {
+    setInterval(printFlowerPreview, 1000);
+}

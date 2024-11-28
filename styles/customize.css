@@ -54,11 +54,6 @@
     height: 180px;
 }
 
-.preview_container{
-    margin-left: 15px;
-}
-
-
 /* The "show" class is added to the filtered elements */
 .show {
     display: block;
@@ -82,4 +77,19 @@
 .filter_btn.active {
     background-color: #666;
     color: white;
+}
+
+.preview_container{
+    width: 40%;
+    margin-left: 15px;
+}
+
+.preview-image-div{
+    margin-left: calc(50% - 70px);
+}
+
+.preview-image-div img {
+    height: 400px;
+    position: absolute;
+    transform-origin: bottom;
 }
