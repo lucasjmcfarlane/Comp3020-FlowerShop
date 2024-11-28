@@ -119,16 +119,16 @@
     </div>
 
 
-    <dialog id="popup-dialog">
-        <button onclick="closePopUp()" id="popup-close-btn" class="popup-btn">&#10006</button>
+    <dialog class="popup" id="popup-dialog" onclick="closePopup('popup-dialog')">
+        <form method="dialog"><button class="popup-close">&#10006</button></form>
         <h2 id="popup-title"></h2>
         <div>
-            <img src="" alt="" id="popup-image" width=300px>
-            <p id="popup-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img src="" alt="" id="popup-image">
+            <p id="popup-description"></p>
         </div>
         <div id="popup-btn-container">
-            <button id="popup-add-cart-btn" class="popup-btn">Add to Cart</button>
-            <button id="popup-custom-btn" class="popup-btn" onclick = "window.location.href='./html/customize.html';" >Customize</button>
+            <button id="popup-custom-btn" class="popup-btn custom-button" onclick = "window.location.href='./html/customize.html';" >Customize</button>
+            <button id="popup-add-cart-btn" class="popup-btn cart-button">Add to Cart</button>
         </div>
     </dialog>
 

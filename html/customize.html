@@ -6,11 +6,13 @@
     <title>Flower Shop: Customize</title>
 
     <script type="text/javascript" src="../scripts/customize.js"></script>
+    <script type="text/javascript" src="../scripts/popup.js"></script>
     <script type="text/javascript" src="../scripts/quantity-input.js"></script>
 
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/customize.css">
     <link rel="stylesheet" href="../styles/quantity-input.css">
+    <link rel="stylesheet" href="../styles/popup.css">
 </head>
 
 <body>
@@ -49,6 +51,15 @@
 
     <main class="main_container">
         
+        <dialog class="popup" id="info-popup-dialog" onclick="closePopup('info-popup-dialog')">
+            <form method="dialog"><button class="popup-close">&#10006</button></form>
+            <h2 id="info-title"></h2>
+            <div>
+                <img src="" alt="" id="info-image">
+                <p id="info-description"></p>
+            </div>
+        </dialog>
+        
         <div class="selection_container">
 
             <div class="selection_tabs">
@@ -70,6 +81,7 @@
             <div class="select_grid">
 
                 <div id="select-item-0" class="select_item yellow">
+                    <button class="info-button" onclick="openInfo(0)">i</button>
                     <div id="flower-image-0" class="item"></div>
                     <div class="quantity-input" id="quantity-input-0">
                         <button id="qt-minus-btn-0" class="quantity-button" onclick="removeFlower(0)">-</button>
@@ -82,6 +94,7 @@
                 </div>
 
                 <div id="select-item-1" class="select_item red">
+                    <button class="info-button" onclick="openInfo(1)">i</button>
                     <div id="flower-image-1" class="item"></div>
                     <div class="quantity-input" id="quantity-input-1">
                         <button id="qt-minus-btn-1" class="quantity-button" onclick="removeFlower(1)">-</button>
@@ -95,6 +108,7 @@
                 </div>
 
                 <div id="select-item-2" class="select_item red">
+                    <button class="info-button" onclick="openInfo(2)">i</button>
                     <div id="flower-image-2" class="item"></div>
                     <div class="quantity-input" id="quantity-input-2">
                         <button id="qt-minus-btn-2" class="quantity-button" onclick="removeFlower(2)">-</button>
@@ -108,6 +122,7 @@
                 </div>
 
                 <div id="select-item-3" class="select_item red">
+                    <button class="info-button" onclick="openInfo(3)">i</button>
                     <div id="flower-image-3" class="item"></div>
                     <div class="quantity-input" id="quantity-input-3">
                         <button id="qt-minus-btn-3" class="quantity-button" onclick="removeFlower(3)">-</button>
@@ -121,6 +136,7 @@
                 </div>
 
                 <div id="select-item-4" class="select_item yellow">
+                    <button class="info-button" onclick="openInfo(4)">i</button>
                     <div id="flower-image-4" class="item"></div>
                     <div class="quantity-input" id="quantity-input-4">
                         <button id="qt-minus-btn-4" class="quantity-button" onclick="removeFlower(4)">-</button>
