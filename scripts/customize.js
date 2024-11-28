@@ -60,19 +60,12 @@ function initializeFlowers() {
 }
 
 function addFlower(index) {
-    console.log(getAllFlowersQuantity());
-    if (getAllFlowersQuantity() < ALL_FLOWER_QTY_LIMIT) {
-        allFlowers[index].plusOne();
-
-        var elementId = VALUE_ELEMENT + index;
-        updateQuantity(elementId, index);
-    } //else maximum reached
+    allFlowers[index].plusOne();
+    updateQuantity(index);
 }
 function removeFlower(index) {
     allFlowers[index].minusOne();
-
-    var elementId = VALUE_ELEMENT + index;
-    updateQuantity(elementId, index);
+    updateQuantity(index);
 }
 
 function getAllFlowersQuantity() {
@@ -102,7 +95,8 @@ function updateQuantityMinusButton(quantity, index) {
     }
 }
 
-function updateQuantity(elementId, index) {
+function updateQuantity(index) {
+    var elementId = VALUE_ELEMENT + index;
     const element = document.getElementById(elementId);
 
     var currFlower = allFlowers[index];
@@ -115,12 +109,46 @@ function updateQuantity(elementId, index) {
     printFlowerPreview();
 }
 
+function resetSelections() {
+
+    // go through every flowers and reset the quantity to zero
+    for (let i = 0; i < allFlowers.length; i++) {
+        var currFlower = allFlowers[i];
+        currFlower.quantity = 0;
+        updateQuantity(i);
+    }
+
+    // de-select everything
+}
+
+
+
+function openInfo(index) {
+    var currFlower = allFlowers[index];
+
+    const dialog = document.getElementById("info-popup-dialog");
+
+    const image = document.getElementById("info-image");
+    image.src = currFlower.imageSource;
+
+    const title = document.getElementById("info-title");
+    title.innerHTML = currFlower.name;
+
+    const description = document.getElementById("info-description");
+    description.innerHTML = "This is some description for " + currFlower.name + ". Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+    dialog.showModal();
+}
+
+
+
 function printFlowerImages() {
     for (let i = 0; i < allFlowers.length; i++) {
         var currElement = document.getElementById(FLOWER_IMAGE + i);
         var currFlower = allFlowers[i];
         var html = "<p>" + currFlower.name + "</p>";
         html += "<img src='" + currFlower.imageSource + "'/>";
+        html += "<p>$" + currFlower.price + "</p>";
 
         currElement.innerHTML = html;
     }
