@@ -1,3 +1,18 @@
+
+
+// mini database
+const allFlowers = [];
+
+// protocols
+const VALUE_ELEMENT = "qt-val-";
+const FLOWER_IMAGE = "flower-image-";
+const PLUS_BUTTON_ELEMENT = "qt-plus-btn-";
+const MINUS_BUTTON_ELEMENT = "qt-minus-btn-";
+
+// constants
+const FLOWER_QTY_LIMIT = 5;
+const ALL_FLOWER_QTY_LIMIT = 10;
+
 class Flower {
     constructor(id, name, price, color, quantity, imageSource) {
         this.id = id;
@@ -9,8 +24,7 @@ class Flower {
     }
 
     plusOne() {
-        const QTY_LIMIT = 5; 
-        if (this.quantity < QTY_LIMIT) {
+        if (this.quantity < FLOWER_QTY_LIMIT) {
             this.quantity += 1;
         }
     }
@@ -21,8 +35,7 @@ class Flower {
     }
 
     setQuantity(num) {
-        const QTY_LIMIT = 5; 
-        if (num > QTY_LIMIT) {
+        if (num > FLOWER_QTY_LIMIT) {
             this.quantity = 5;
         } else if(num < 0) {
             this.quantity = 0;
@@ -31,13 +44,6 @@ class Flower {
         }
     }
 }
-
-// mini database
-const allFlowers = [];
-
-// protocols
-const VALUE_ELEMENT = "qt-val-";
-const FLOWER_IMAGE = "flower-image-";
 
 function initializeFlowers() {
     // new Flower(id, name, price, color, quantity, imageSource)
@@ -49,16 +55,19 @@ function initializeFlowers() {
 }
 
 function addFlower(index) {
-    allFlowers[index].plusOne();
+    console.log(getAllFlowersQuantity());
+    if (getAllFlowersQuantity() < ALL_FLOWER_QTY_LIMIT) {
+        allFlowers[index].plusOne();
 
-    var elementId = VALUE_ELEMENT + index;
-    updateQuantity(elementId, index)
+        var elementId = VALUE_ELEMENT + index;
+        updateQuantity(elementId, index);
+    } //else maximum reached
 }
 function removeFlower(index) {
     allFlowers[index].minusOne();
 
     var elementId = VALUE_ELEMENT + index;
-    updateQuantity(elementId, index)
+    updateQuantity(elementId, index);
 }
 
 function getAllFlowersQuantity() {
@@ -70,12 +79,33 @@ function getAllFlowersQuantity() {
     return totalQuantity;
 }
 
+function updateQuantityPlusButton(quantity, index) {
+    const button = document.getElementById(PLUS_BUTTON_ELEMENT+index);
+    if (quantity >= FLOWER_QTY_LIMIT) {
+        button.hidden = true;
+    } else {
+        button.hidden = false;
+    }
+}
+
+function updateQuantityMinusButton(quantity, index) {
+    const button = document.getElementById(MINUS_BUTTON_ELEMENT+index);
+    if (quantity <= 0) {
+        button.hidden = true;
+    } else {
+        button.hidden = false;
+    }
+}
+
 function updateQuantity(elementId, index) {
     const element = document.getElementById(elementId);
 
     var currFlower = allFlowers[index];
     element.value = currFlower.quantity;
 
+    updateQuantityPlusButton(element.value, index);
+    updateQuantityMinusButton(element.value, index);
+    
     // update the flower preview
     printFlowerPreview();
 }
