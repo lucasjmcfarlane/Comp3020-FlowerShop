@@ -39,13 +39,20 @@ const allFlowers = [];
 const VALUE_ELEMENT = "qt-val-";
 const FLOWER_IMAGE = "flower-image-";
 
-function initializeFlowers() {
+function initializeFlowers(flowers) {
     // new Flower(id, name, price, color, quantity, imageSource)
-    allFlowers[0] = new Flower(0, "Sunflower 1", 1, "yellow", 0,"../assets/flower1.png");
-    allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", 0, "../assets/flower2.png");
-    allFlowers[2] = new Flower(1,"Red Flower 2", 1, "red", 0, "../assets/flower3.png");
-    allFlowers[3] = new Flower(1,"Red Flower 3", 1, "red", 0, "../assets/flower2.png");
-    allFlowers[4] = new Flower(1,"Sunflower 2", 1, "yellow", 0, "../assets/flower1.png");
+    allFlowers[0] = new Flower(0, "Sunflower 1", 1, "yellow", flowers[0],"../assets/flower1.png");
+    allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", flowers[1], "../assets/flower2.png");
+    allFlowers[2] = new Flower(2,"Red Flower 2", 1, "red", flowers[2], "../assets/flower3.png");
+    allFlowers[3] = new Flower(3,"Red Flower 3", 1, "red", flowers[3], "../assets/flower2.png");
+    allFlowers[4] = new Flower(4,"Sunflower 2", 1, "yellow", flowers[4], "../assets/flower1.png");
+
+    for (let index = 0; index < allFlowers.length; index++) {
+        const element = document.getElementById("qt-val-"+index);
+        var currFlower = allFlowers[index];
+        element.value = currFlower.quantity;
+    }
+
 }
 
 function addFlower(index) {
@@ -135,9 +142,23 @@ function checkboxClicked(index){
 }
 
 
+
 window.onload=function(){
+    var url = document.location.href;
+    params = url.split('?')[1].split("=")[1].split(",");
+    // console.log(url);
+    console.log(params);
+    
+    var data = {};
+    var tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split(':');
+         data[tmp[0]] = tmp[1];
+    }
+    // document.getElementById('here').innerHTML = data.name;
+    console.log(data)
     filterSetup();
-    initializeFlowers();
+    initializeFlowers(data);
     printFlowerImages();
     printFlowerPreview();
 }
