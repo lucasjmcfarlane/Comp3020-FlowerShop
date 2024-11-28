@@ -1,20 +1,106 @@
 class Flower {
-    constructor(id, name, price, color, quantity, isSelected, imageSource) {
+    constructor(id, name, price, color, quantity, imageSource) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.color = color;
         this.quantity = quantity;
-        this.isSelected = isSelected;
         this.imageSource = imageSource;
     }
 
-    static plusOne() {
-        this.quantity += 1;
+    plusOne() {
+        const QTY_LIMIT = 5; 
+        if (this.quantity <= QTY_LIMIT) {
+            this.quantity += 1;
+        }
     }
-    static minusOne() {
+    minusOne() {
         if (this.quantity > 0) {
             this.quantity -= 1;
+        }
+    }
+}
+
+// mini database
+const allFlowers = [];
+
+// protocols
+const VALUE_ELEMENT = "qt-val-";
+const FLOWER_IMAGE = "flower-image-";
+
+function initializeFlowers() {
+    // new Flower(id, name, price, color, quantity, imageSource)
+    allFlowers[0] = new Flower(0, "Sunflower 1", 1, "yellow", 0,"../assets/flower1.png");
+    allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", 0, "../assets/flower2.png");
+    allFlowers[2] = new Flower(1,"Red Flower 2", 1, "red", 0, "../assets/flower3.png");
+    allFlowers[3] = new Flower(1,"Red Flower 3", 1, "red", 0, "../assets/flower2.png");
+    allFlowers[4] = new Flower(1,"Sunflower 2", 1, "yellow", 0, "../assets/flower1.png");
+}
+
+function addFlower(index) {
+    allFlowers[index].plusOne();
+
+    var elementId = VALUE_ELEMENT + index;
+    updateQuantity(elementId, index)
+}
+function removeFlower(index) {
+    allFlowers[index].minusOne();
+
+    var elementId = VALUE_ELEMENT + index;
+    updateQuantity(elementId, index)
+}
+
+function getAllFlowersQuantity() {
+    var totalQuantity = 0;
+    for (let i = 0; i < allFlowers.length; i++) {
+        var currFlower = allFlowers[i];
+        totalQuantity += currFlower.quantity;
+    }
+    return totalQuantity;
+}
+
+function updateQuantity(elementId, index) {
+    const element = document.getElementById(elementId);
+
+    var currFlower = allFlowers[index];
+    element.value = currFlower.quantity;
+
+    // update the flower preview
+    printFlowerPreview();
+}
+
+function printFlowerImages() {
+    for (let i = 0; i < allFlowers.length; i++) {
+        var currElement = document.getElementById(FLOWER_IMAGE + i);
+        var currFlower = allFlowers[i];
+        var html = "<p>" + currFlower.name + "</p>";
+        html += "<img src='" + currFlower.imageSource + "'/>";
+
+        currElement.innerHTML = html;
+    }
+}
+
+function printFlowerPreview() {
+    var preview = document.getElementById("preview-image");
+    preview.innerHTML = "";
+    
+    var allFlowersQuantity = getAllFlowersQuantity();
+    let multiplier = 90/(allFlowersQuantity-1);
+    let rotation = -45;
+
+    // no rotation if there is a single flower
+    if (allFlowersQuantity == 1) {
+        rotation = 0;
+    }
+
+    for (let i = 0; i < allFlowers.length; i++) {
+        var currFlower = allFlowers[i];
+
+        if (currFlower.quantity > 0) {
+            for (let j = 0; j < currFlower.quantity; j++) {
+                preview.innerHTML += "<img src='" + currFlower.imageSource + "' style='transform:rotate(" + rotation + "deg)'; />";
+                rotation += (multiplier);
+            }
         }
     }
 }
@@ -37,57 +123,16 @@ function checkboxClicked(index){
     }
 }
 
-const items = [];
 
-function addItem(item) {
-    items.push(item);
-    
-    if (item["flower-src"]) {
-        addFlowerPreview(item["flower-src"]);
-        console.log(items);
-    }
+window.onload=function(){
+    filterSetup();
+    initializeFlowers();
+    printFlowerImages();
+    printFlowerPreview();
 }
-
-function removeItem(item) {
-    items.pop();
-    flowers.pop();
-}
-
-const flowers = [];
-
-function addFlowerPreview(flowerSrc) {
-    flowers.push(flowerSrc);
-    console.log(flowers);
-}
-
-function removeFlowerPreview(flowerSrc) {
-    flowers.pop();
-}
-
-function printFlowerPreview() {
-    var preview = document.getElementById("preview-image");
-    preview.innerHTML = "";
-    
-    if (flowers.length > 1) {
-        let multiplier = 90/(flowers.length-1);
-        let rotation = -45;
-        for (let i = 0; i < flowers.length; i++) {
-            preview.innerHTML += "<img src='" + flowers[i] + "' style='transform:rotate(" + rotation + "deg)'; \\>";
-            rotation += (multiplier);
-        }
-    } else if (flowers.length == 1) {
-        preview.innerHTML = "<img src='" + flowers[0] + "'\\>";
-    }
-    
-}
-
-function previewSetup() {
-    setInterval(printFlowerPreview, 1000);
-}
-
 
 var innerTrigger = false;
-window.onload=function(){
+function filterSetup() {
     document.getElementById('all_btn').click();
     document.getElementById("search_bar_input").addEventListener("input", function (event) {
         innerTrigger = true
@@ -103,13 +148,7 @@ window.onload=function(){
             }
         }
     })
-
-    previewSetup();
-
-    // var flower1 = new Flower(1, "item1", 1, "yellow", 0, false, "../assets/flower1.png");
-    // console.log(flower1);
 }
-
 
 
 function filterSelection(c) {
@@ -158,13 +197,5 @@ function w3RemoveClass(element, name) {
         }
     }
     element.className = arr1.join(" ");
-}
-
-function addToValue(id, value){
-    const oldValue = document.getElementById(id)
-    oldValue.value = Number(oldValue.value) + Number(value)
-    if (Number(oldValue.value) <= 0){
-        oldValue.value = 1
-    }
 }
 

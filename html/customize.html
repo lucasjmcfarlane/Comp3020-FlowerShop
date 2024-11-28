@@ -69,18 +69,30 @@
             </div>
             <div class="select_grid">
 
-                <div id="select-item-1" class="select_item yellow">
+                <div id="select-item-0" class="select_item yellow">
+                    <div class="item-row">
+                        <input id="checkbox0" type="checkbox" onclick="checkboxClicked(0)">
+                        <div class="quantity-input" id="quantity-input-0">
+                            <button class="quantity-button" onclick="removeFlower(0)">-</button>
+                            <input class="quantity-value" id="qt-val-0" type="number" value="0" disabled>
+                            <button class="quantity-button" onclick="addFlower(0)">+</button>
+                        </div>
+                    </div>
+
+                    <div id="flower-image-0" class="item">
+                    </div>
+                </div>
+
+                <div id="select-item-1" class="select_item red">
                     <div class="item-row">
                         <input id="checkbox1" type="checkbox" onclick="checkboxClicked(1)">
                         <div class="quantity-input" id="quantity-input-1">
-                            <button class="quantity-button" onclick="addToValue('value1', -1); removeItem()">-</button>
-                            <input class="quantity-value" id="value1" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value1', 1); addItem({'name': 'item1','flower-src':document.getElementById('item-1-img').src, 'price':1})">+</button>
+                            <button class="quantity-button" onclick="removeFlower(1)">-</button>
+                            <input class="quantity-value" id="qt-val-1" type="number" value="0" disabled>
+                            <button class="quantity-button" onclick="addFlower(1)">+</button>
                         </div>
                     </div>
-                    <div class="item">
-                        <p>Item 1</p>
-                        <img id="item-1-img" src="../assets/flower1.png" alt="">
+                    <div id="flower-image-1" class="item">
                     </div>
                 </div>
 
@@ -88,59 +100,38 @@
                     <div class="item-row">
                         <input id="checkbox2" type="checkbox" onclick="checkboxClicked(2)">
                         <div class="quantity-input" id="quantity-input-2">
-                            <button class="quantity-button" onclick="addToValue('value2', -1); removeItem()">-</button>
-                            <input class="quantity-value" id="value2" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value2', 1); addItem({'name': 'item2','flower-src':document.getElementById('item-2-img').src, 'price':1})">+</button>
+                            <button class="quantity-button" onclick="removeFlower(2)">-</button>
+                            <input class="quantity-value" id="qt-val-2" type="number" value="0" disabled>
+                            <button class="quantity-button" onclick="addFlower(2)">+</button>
                         </div>
                     </div>
-                    <div class="item">
-                        <p>Item 2</p>
-                        <img id="item-2-img" src="../assets/flower2.png" alt="">
+                    <div id="flower-image-2" class="item">
                     </div>
                 </div>
 
-                    <div id="select-item-3" class="select_item red">
-                        <div class="item-row">
-                            <input id="checkbox3" type="checkbox" onclick="checkboxClicked(3)">
-                            <div class="quantity-input" id="quantity-input-3">
-                                <button class="quantity-button" onclick="addToValue('value3', -1)">-</button>
-                                <input class="quantity-value" id="value3" type="number" value="1" disabled>
-                                <button class="quantity-button" onclick="addToValue('value3', 1)">+</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <p>Item 3</p>
-                            <img src="../assets/flower3.png" alt="">
+                <div id="select-item-3" class="select_item red">
+                    <div class="item-row">
+                        <input id="checkbox3" type="checkbox" onclick="checkboxClicked(3)">
+                        <div class="quantity-input" id="quantity-input-3">
+                            <button class="quantity-button" onclick="removeFlower(3)">-</button>
+                            <input class="quantity-value" id="qt-val-3" type="number" value="0" disabled>
+                            <button class="quantity-button" onclick="addFlower(3)">+</button>
                         </div>
                     </div>
+                    <div id="flower-image-3" class="item">
+                    </div>
+                </div>
 
-                <div id="select-item-4" class="select_item red">
+                <div id="select-item-4" class="select_item yellow">
                     <div class="item-row">
                         <input id="checkbox4" type="checkbox" onclick="checkboxClicked(4)">
                         <div class="quantity-input" id="quantity-input-4">
-                            <button class="quantity-button" onclick="addToValue('value4', -1)">-</button>
-                            <input class="quantity-value" id="value4" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value4', 1)">+</button>
+                            <button class="quantity-button" onclick="removeFlower(4)">-</button>
+                            <input class="quantity-value" id="qt-val-4" type="number" value="0" disabled>
+                            <button class="quantity-button" onclick="addFlower(4)">+</button>
                         </div>
                     </div>
-                    <div class="item">
-                        <p>Item 4</p>
-                        <img src="../assets/flower2.png" alt="">
-                    </div>
-                </div>
-
-                <div id="select-item-5" class="select_item yellow">
-                    <div class="item-row">
-                        <input id="checkbox5" type="checkbox" onclick="checkboxClicked(5)">
-                        <div class="quantity-input" id="quantity-input-5">
-                            <button class="quantity-button" onclick="addToValue('value5', -1)">-</button>
-                            <input class="quantity-value" id="value5" type="number" value="1" disabled>
-                            <button class="quantity-button" onclick="addToValue('value5', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <p>Item 5</p>
-                        <img src="../assets/flower1.png" alt="">
+                    <div id="flower-image-4" class="item">
                     </div>
                 </div>
 
