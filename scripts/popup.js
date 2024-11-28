@@ -2,7 +2,8 @@
 const dialog = document.getElementById("popup-dialog");
 
 function openAndSelect(element) {
-    // Handle opening the popup
+    // Handle opening the popu
+    console.log(element);
     const imgElement = element.querySelector('img');
     openPopUp(imgElement.src, imgElement.alt);
 
@@ -20,18 +21,14 @@ function openPopUp(_src, _alt) {
     
     //set the image
     const image = document.getElementById("popup-image");
-    image.src = popupImagePath;
+    image.src = _src;
 
     const title = document.getElementById("popup-title");
-    title.innerHTML = popupTitle
-
-    const description = document.getElementById("popup-description");
-    description.innerHTML = popupDescription
-
+    title.innerHTML = _alt
+    
     dialog.showModal();
 }
 
 function closePopUp() {
-    const dialog = document.getElementById("popup-dialog");
     dialog.close();
 }

@@ -87,7 +87,20 @@ function w3RemoveClass(element, name) {
 }
 
 
+document.querySelectorAll('.select_item').forEach((item, index) => {
+    // Add a click event listener to each select_item
+    item.addEventListener('click', (event) => {
+        // Prevent nested clicks (e.g., button clicks) from firing the event
+        if (event.target.tagName === 'INPUT') return;
 
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        // Toggle the checkbox state
+        checkbox.checked = !checkbox.checked;
+
+        // Call the checkboxClicked function with the correct index
+        checkboxClicked(index + 1); // index + 1 since IDs are 1-based
+    });
+});
 
 
 

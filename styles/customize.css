@@ -1,40 +1,43 @@
 .main_container{
-    height: 85vh;
+    height: 100vh;
     display: flex;
 }
 
 .selection_container{
-    width: 60%;
+    width: 62.5%;
     display: flex;
     flex-direction: column;
     border-right: 1px solid gray; /* Optional: Adds a dividing line */
-    padding-right: 15px;
+    padding: 20px;
 }
 
-.selection_tabs{
-    margin-top: 15px;
+.selection_buttons{
+    margin: 15px;
+
 }
 
 .search_bar_input{
+    margin-left: 15px;
     margin-top: 15px;
+    margin-right: 15px;
     width: 95%;
     height: 40px;
 }
 
 .select_grid{
-    margin-top: 15px;
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
 }
 
 .select_item{
-    background: lightgray;
+    background: white;
     padding: 15px;
-    width: 250px;
+    width: 28%;
     height: 250px;
     margin: 0 10px 10px 0;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
     display: none;
 }
 
@@ -69,6 +72,7 @@
     border: none;
     outline: none;
     padding: 12px 16px;
+    margin: 15px;
     background-color: #f1f1f1;
     cursor: pointer;
   }

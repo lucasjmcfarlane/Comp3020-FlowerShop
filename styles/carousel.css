@@ -12,23 +12,53 @@
     text-decoration: none;
 }
 
-.carousel-column{
-    background: #A3D8B4;
+.carousel-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.slide{
+.slides {
+    width: 100%;
+    height: 100%; /* Adjust to fit your layout */
+}
+
+/* Common styles for all slides */
+.slide {
     display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    height: 450px; /* Adjust height as needed */
 }
 
-.slide img{
-    height: 450px;
+/* Specific background colors for each slide */
+
+
+.slide img {
+    height: 350px; /* Adjust image height */
+    margin-right: 20px;
+}
+
+.slide h1, .slide h3 {
+    margin: 10px 0;
+}
+
+/* Show the active slide */
+.slide.active {
+    display: flex; /* Make the active slide visible */
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
