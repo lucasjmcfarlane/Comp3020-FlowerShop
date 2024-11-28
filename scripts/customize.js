@@ -19,6 +19,17 @@ class Flower {
             this.quantity -= 1;
         }
     }
+
+    setQuantity(num) {
+        const QTY_LIMIT = 5; 
+        if (num > QTY_LIMIT) {
+            this.quantity = 5;
+        } else if(num < 0) {
+            this.quantity = 0;
+        } else {
+            this.quantity = num
+        }
+    }
 }
 
 // mini database
@@ -131,6 +142,20 @@ window.onload=function(){
     printFlowerPreview();
 }
 
+
+function updateState(id,index) {
+    var num = parseInt(id.value)
+    if (id.value == "")
+        num = 0
+    if (num > 5)
+        num = 5
+    console.log(num)
+    id.value = num
+    allFlowers[index].setQuantity(num)
+    printFlowerPreview();
+}
+
+
 var innerTrigger = false;
 function filterSetup() {
     document.getElementById('all_btn').click();
@@ -142,9 +167,9 @@ function filterSetup() {
         const grid = document.getElementsByClassName("select_item");
         for (let i = 0; i < grid.length; i++) {
             const itemText = grid[i].textContent.toLowerCase();
-            w3RemoveClass(grid[i], "show");
+            RemoveClass(grid[i], "show");
             if (itemText.includes(searchText)) {
-                w3AddClass(grid[i], "show")
+                AddClass(grid[i], "show")
             }
         }
     })
@@ -157,8 +182,8 @@ function filterSelection(c) {
     if (c == "all") c = "";
     // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
     for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
     }
     // Add active class to the current control button (highlight it)
     var btns = document.getElementsByClassName("filter_btn");
@@ -175,7 +200,7 @@ function filterSelection(c) {
 }
 
 // Show filtered elements
-function w3AddClass(element, name) {
+function AddClass(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
@@ -187,7 +212,7 @@ function w3AddClass(element, name) {
 }
 
 // Hide elements that are not selected
-function w3RemoveClass(element, name) {
+function RemoveClass(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
