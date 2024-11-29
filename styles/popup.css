@@ -1,17 +1,14 @@
+.popup {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
 
-.popup-btn {
+.popup-close {
     float: right;
-    margin: 0.2em;
-}
-
-#popup-image {
-    float: left;
-}
-
-#popup-description {
-    float: left;
-    width:300px;
-    margin-left: 0.5em;
+    border:none;
+    font-size: x-large;
+    background-color: rgb(255, 255, 255,0);
 }
 
 #popup-btn-container {
@@ -19,4 +16,39 @@
     right: 0;
     bottom: 0;
     margin:1em;
+}
+
+#popup-btn-container button {
+    padding: 1em;
+    margin-top: 0.3em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    border: none;
+    border-radius: 15px;
+}
+
+.popup h2 {
+    margin-left: 2em;
+}
+
+.popup img {
+    float: left;
+    margin: 1em;
+    width: 200px;
+}
+
+.popup p {
+    float: left;
+    width: 500px;
+    margin-left: 0.5em;
+}
+
+.cart-button {
+    color: white;
+    background-color: rgb(32, 203, 32);
+}
+
+.custom-button {
+    color: white;
+    background-color: #47a0ff
 }
