@@ -23,6 +23,7 @@ function changePage(path) {
     url = path + '?data=' + data;
 
     window.location.href = url;
+}
 
 function closePopup(dialogElement) {
     const dialog = document.getElementById(dialogElement);
@@ -35,5 +36,4 @@ function closePopup(dialogElement) {
           dialog.close();
         }
       });
-    }
 }
