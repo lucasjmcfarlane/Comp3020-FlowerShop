@@ -16,6 +16,28 @@
 
 }
 
+.selection_tabs{
+    padding-left: 15px;
+    
+}
+
+.selection_tabs button{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    margin-top: 0.3em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    border: solid 2px rgb(118, 115, 115);
+    border-radius: 15px;
+    background-color:  white;
+    color: black;
+    cursor: pointer;
+}
+
+
+
 .search_bar_input{
     margin-left: 15px;
     margin-top: 15px;
@@ -66,16 +88,22 @@
 .filter_btn {
     border: none;
     outline: none;
-    padding: 12px 16px;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     margin: 15px;
     background-color: #f1f1f1;
     cursor: pointer;
+    background-color: #c2e8c4; 
+    color: #025a05; 
+    border-radius: 10%;
   }
   
 /* Add a light grey background on mouse-over */
-.filter_btn:hover {
+/* .filter_btn:hover {
     background-color: #ddd;
-}
+} */
 
 /* Add a dark background to the active button */
 .filter_btn.active {
@@ -123,7 +151,7 @@
 }
 
 #preview-buttons-cancel {
-    background-color: rgb(245, 76, 76);
+    background-color: rgb(218, 17, 17);
     color:#ffffff;
     margin-right: 25%;
     cursor: pointer;
