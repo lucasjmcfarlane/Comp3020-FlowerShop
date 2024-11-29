@@ -63,8 +63,8 @@
         <div class="selection_container">
 
             <div class="selection_tabs">
-                <button type="button">Flowers</button>
-                <button type="button">Vases</button>
+                <button type="button" onclick="showFlowerGrid()">Flowers</button>
+                <button type="button" onclick="showVaseGrid()" >Vases</button>
                 <button type="button">Ribbons</button>
                 <button type="button">...</button>
             </div>
@@ -78,10 +78,11 @@
                 <button class="filter_btn" onclick="filterSelection('green')"> Green</button>
                 <button class="filter_btn" onclick="filterSelection('yellow')"> Yellow</button>
             </div>
-            <div class="select_grid">
+            <!-- FLOWER GRID -->
+            <div class="select_grid" id="flower-grid">
 
-                <div id="select-item-0" class="select_item yellow">
-                    <button class="info-button" onclick="openInfo(0)">i</button>
+                <div id="select-flower-0" class="select_item yellow">
+                    <button class="info-button" onclick="openInfo(0, 'flower')">i</button>
                     <div id="flower-image-0" class="item"></div>
                     <div class="quantity-input" id="quantity-input-0">
                         <button id="qt-minus-btn-0" class="quantity-button minus-button" onclick="removeFlower(0)">-</button>
@@ -89,12 +90,12 @@
                         <button id="qt-plus-btn-0" class="quantity-button plus-button" onclick="addFlower(0)">+</button>
                     </div>
                     <div class="item-row">
-                        <input id="checkbox0" type="checkbox" onclick="checkboxClicked(0)">
+                        <input id="checkbox-flower-0" type="checkbox" onclick="checkboxClicked(0, 'flower')">
                     </div>
                 </div>
-
-                <div id="select-item-1" class="select_item red">
-                    <button class="info-button" onclick="openInfo(1)">i</button>
+                
+                <div id="select-flower-1" class="select_item red">
+                    <button class="info-button" onclick="openInfo(1, 'flower')">i</button>
                     <div id="flower-image-1" class="item"></div>
                     <div class="quantity-input" id="quantity-input-1">
                         <button id="qt-minus-btn-1" class="quantity-button minus-button" onclick="removeFlower(1)">-</button>
@@ -102,13 +103,13 @@
                         <button id="qt-plus-btn-1" class="quantity-button plus-button" onclick="addFlower(1)">+</button>
                     </div>
                     <div class="item-row">
-                        <input id="checkbox1" type="checkbox" onclick="checkboxClicked(1)">
+                        <input id="checkbox-flower-1" type="checkbox" onclick="checkboxClicked(1, 'flower')">
                     </div>
                     
                 </div>
-
-                <div id="select-item-2" class="select_item red">
-                    <button class="info-button" onclick="openInfo(2)">i</button>
+                
+                <div id="select-flower-2" class="select_item red">
+                    <button class="info-button" onclick="openInfo(2, 'flower')">i</button>
                     <div id="flower-image-2" class="item"></div>
                     <div class="quantity-input" id="quantity-input-2">
                         <button id="qt-minus-btn-2" class="quantity-button minus-button" onclick="removeFlower(2)">-</button>
@@ -116,13 +117,13 @@
                         <button id="qt-plus-btn-2" class="quantity-button plus-button" onclick="addFlower(2)">+</button>
                     </div>
                     <div class="item-row">
-                        <input id="checkbox2" type="checkbox" onclick="checkboxClicked(2)">
+                        <input id="checkbox-flower-2" type="checkbox" onclick="checkboxClicked(2, 'flower')">
                     </div>
                     
                 </div>
-
-                <div id="select-item-3" class="select_item red">
-                    <button class="info-button" onclick="openInfo(3)">i</button>
+                
+                <div id="select-flower-3" class="select_item blue">
+                    <button class="info-button" onclick="openInfo(3, 'flower')">i</button>
                     <div id="flower-image-3" class="item"></div>
                     <div class="quantity-input" id="quantity-input-3">
                         <button id="qt-minus-btn-3" class="quantity-button minus-button" onclick="removeFlower(3)">-</button>
@@ -130,13 +131,12 @@
                         <button id="qt-plus-btn-3" class="quantity-button plus-button" onclick="addFlower(3)">+</button>
                     </div>
                     <div class="item-row">
-                        <input id="checkbox3" type="checkbox" onclick="checkboxClicked(3)">
+                        <input id="checkbox-flower-3" type="checkbox" onclick="checkboxClicked(3, 'flower')">
                     </div>
-                    
                 </div>
-
-                <div id="select-item-4" class="select_item yellow">
-                    <button class="info-button" onclick="openInfo(4)">i</button>
+                
+                <div id="select-flower-4" class="select_item white">
+                    <button class="info-button" onclick="openInfo(4, 'flower')">i</button>
                     <div id="flower-image-4" class="item"></div>
                     <div class="quantity-input" id="quantity-input-4">
                         <button id="qt-minus-btn-4" class="quantity-button minus-button" onclick="removeFlower(4)">-</button>
@@ -144,17 +144,72 @@
                         <button id="qt-plus-btn-4" class="quantity-button plus-button" onclick="addFlower(4)">+</button>
                     </div>
                     <div class="item-row">
-                        <input id="checkbox4" type="checkbox" onclick="checkboxClicked(4)">
+                        <input id="checkbox-flower-4" type="checkbox" onclick="checkboxClicked(4, 'flower')">
+                    </div>
+                </div>
+                
+                <div id="select-flower-5" class="select_item red">
+                    <button class="info-button" onclick="openInfo(5, 'flower')">i</button>
+                    <div id="flower-image-5" class="item"></div>
+                    <div class="quantity-input" id="quantity-input-5">
+                        <button id="qt-minus-btn-5" class="quantity-button minus-button" onclick="removeFlower(5)">-</button>
+                        <input class="quantity-value" id="qt-val-5" type="number" value="0" min="0" max="5" oninput="updateState(this,5)">
+                        <button id="qt-plus-btn-5" class="quantity-button plus-button" onclick="addFlower(5)">+</button>
+                    </div>
+                    <div class="item-row">
+                        <input id="checkbox-flower-5" type="checkbox" onclick="checkboxClicked(5, 'flower')">
                     </div>
                 </div>
 
+            </div>
+            <!-- END OF FLOWER GRID -->
 
+
+            <!-- VASE GRID -->
+            <div class="select_grid" id="vase-grid">
+
+                <div id="select-vase-0" class="select_item yellow">
+                    <button class="info-button" onclick="openInfo(0, 'vase')">i</button>
+                    <div id="vase-image-0" class="item"></div>
+                    <div class="item-row">
+                        <input id="checkbox-vase-0" type="checkbox" onclick="checkboxClicked(0, 'vase'); addVase(0)">
+                    </div>
+                </div>
+                
+                <div id="select-vase-1" class="select_item red">
+                    <button class="info-button" onclick="openInfo(1, 'vase')">i</button>
+                    <div id="vase-image-1" class="item"></div>
+                    <div class="item-row">
+                        <input id="checkbox-vase-1" type="checkbox" onclick="checkboxClicked(1, 'vase'); addVase(1)">
+                    </div>
+                    
+                </div>
+                
+                <div id="select-vase-2" class="select_item red">
+                    <button class="info-button" onclick="openInfo(2, 'vase')">i</button>
+                    <div id="vase-image-2" class="item"></div>
+                    <div class="item-row">
+                        <input id="checkbox-vase-2" type="checkbox" onclick="checkboxClicked(2, 'vase'); addVase(2)">
+                    </div>
+                    
+                </div>
+                
+                <div id="select-vase-3" class="select_item blue">
+                    <button class="info-button" onclick="openInfo(3, 'vase')">i</button>
+                    <div id="vase-image-3" class="item"></div>
+                    <div class="item-row">
+                        <input id="checkbox-vase-3" type="checkbox" onclick="checkboxClicked(3, 'vase'); addVase(3)">
+                    </div>
+                </div>
 
             </div>
+            <!-- END OF VASE GRID -->
         </div>
 
         <div class="preview_container">
-            <div class="preview-image-div" id="preview-image"></div>
+            
+            <div class="preview-image-div" id="preview-flower"></div>
+            <div id="preview-vase"></div>
             <div class="preview-buttons">
                 <button id="preview-buttons-cancel" class="main-buttons" type="button" onclick="resetSelections()">Reset Selections</button>
                 <button id="preview-buttons-cart" class="main-buttons" type="button">Add to Cart</button>
