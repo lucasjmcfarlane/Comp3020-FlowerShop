@@ -15,7 +15,15 @@ function openPopUp(popupImagePath, popupTitle, popupDescription) {
     dialog.showModal();
 }
 
-function closePopUp() {
-    const dialog = document.getElementById("popup-dialog");
-    dialog.close();
+function closePopup(dialogElement) {
+    const dialog = document.getElementById(dialogElement);
+
+    dialog.addEventListener('click', function(event) {
+        var rect = dialog.getBoundingClientRect();
+        var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+          dialog.close();
+        }
+      });
 }
