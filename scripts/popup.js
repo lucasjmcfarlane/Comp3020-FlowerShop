@@ -18,16 +18,21 @@ function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
     dialog.showModal();
 }
 
-function closePopUp() {
-    const dialog = document.getElementById("popup-dialog");
-    data = ""
-    dialog.close();
-}
-
 
 function changePage(path) {
     url = path + '?data=' + data;
 
     window.location.href = url;
 
+function closePopup(dialogElement) {
+    const dialog = document.getElementById(dialogElement);
+
+    dialog.addEventListener('click', function(event) {
+        var rect = dialog.getBoundingClientRect();
+        var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+          dialog.close();
+        }
+      });
 }
