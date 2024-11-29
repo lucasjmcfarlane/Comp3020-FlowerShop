@@ -1,0 +1,170 @@
+const items = [];
+
+function addItem(item) {
+    items.push(item);
+    
+    if (item["flower-src"]) {
+        addFlowerPreview(item["flower-src"]);
+        console.log(items);
+    }
+}
+
+function removeItem(item) {
+    console.log(items.indexOf(item.name));
+}
+
+const flowers = [];
+
+function addFlowerPreview(flowerSrc) {
+    flowers.push(flowerSrc);
+    console.log(flowers);
+}
+
+function removeFlowerPreview(flowerSrc) {
+    
+}
+
+function printFlowerPreview() {
+    var preview = document.getElementById("preview-image");
+    preview.innerHTML = "";
+    
+    if (flowers.length > 1) {
+        let multiplier = 90/(flowers.length-1);
+        let rotation = -45;
+        for (let i = 0; i < flowers.length; i++) {
+            preview.innerHTML += "<img src='" + flowers[i] + "' style='transform:rotate(" + rotation + "deg)'; \\>";
+            rotation += (multiplier);
+        }
+    } else if (flowers.length == 1) {
+        preview.innerHTML = "<img src='" + flowers[0] + "'\\>";
+    }
+    
+}
+
+function previewSetup() {
+    setInterval(printFlowerPreview, 1000);
+}
+
+
+console.log("initializing flowers")
+        var html = "";
+        for (let i = 0; i < allFlowers.length; i++) {
+            var currFlower = allFlowers[i];
+            html += openDiv("select-item-"+i, "select_item " + currFlower.color);
+
+            html += createButton("", "info-button", "openInfo(" + i + ")", "i"); // I button
+            html += openDiv("flower-image-"+i, "item");
+            html += closeDiv();
+
+            html += openDiv("quantity-input-"+i, "quantity-input");
+            html += createButton("qt-minus-btn-"+i, "quantity-button minus-button", "removeFlower("+i+")", "-");
+            html += createInput("qt-val-"+i, "quantity-value", "number", "0", "0", "5", "updateState(this,"+i+")", "");
+            html += createButton("qt-plus-btn-"+i, "quantity-button plus-button", "addFlower("+i+")", "+");
+            html += closeDiv();
+
+            html += openDiv("", "item-row");
+            html += createInput("checkbox"+i, "", "checkbox", "", "", "", "", "checkBoxClicked("+ i + ")");
+            html += closeDiv();
+
+            html += closeDiv();
+        }
+        theGrid.innerHTML = html;
+        console.log(html);
+
+        
+function openDiv(id,theClass) {
+    return "<div id='" + id + "' class='" + theClass + "'>";
+}
+
+function closeDiv() {
+    return "</div>";
+}
+
+function createButton(id, theClass, onclick, text) {
+    return "<button id='" + id +"' class='"+ theClass + "' onclick='" + onclick + "'>" + text + "</button>"
+}
+
+function createInput(id, theClass, type, value, min, max, oninput, onclick) {
+    return "<input id='" + id + "' class='"+ theClass +"' type='" + type +"' value='" + value + "' min='" + min + "' max='" + max + "' oninput='" + oninput + "'>";
+}
+
+function initializeGrid(items) {
+    const theGrid = document.getElementById("the-grid");
+
+    if (items == "flowers") {
+        theGrid.innerHTML = flowerGrid();
+        printFlowerImages();
+    } else if (items = "vases") {
+        theGrid.innerHTML = vaseGrid();
+        printVaseImages();
+        console.log(theGrid.innerHTML);
+    }
+
+    filterSetup();
+    
+}
+
+function vaseGrid() {
+    console.log("initializing vases");
+    var html = "";
+    for (let i = 0; i < allVases.length; i++) {
+        var currVase = allVases[i];
+        console.log(currVase);
+        html += openDiv("select-vase-"+i, "select_item " + currVase.color);
+
+        html += createButton("", "info-button", "openInfo(" + i + ", \"vase\")", "i"); // I button
+        html += openDiv("vase-image-"+i, "item");
+        html += closeDiv();
+
+        html += openDiv("", "item-row");
+        html += "<input id='checkbox2" + i + "' type='checkbox' onclick='checkboxClicked(" + i + ")'>";
+        html += closeDiv();
+
+        html += closeDiv();
+    }
+
+    return html;
+}
+
+function flowerGrid() {
+    console.log("initializing flowers")
+    var html = "";
+    for (let i = 0; i < allFlowers.length; i++) {
+        var currFlower = allFlowers[i];
+        html += openDiv("select-item-"+i, "select_item " + currFlower.color);
+
+        html += createButton("", "info-button", "openInfo(" + i + ", \"flower\")", "i"); // I button
+        html += openDiv("flower-image-"+i, "item");
+        html += closeDiv();
+
+        html += openDiv("quantity-input-"+i, "quantity-input");
+        html += createButton("qt-minus-btn-"+i, "quantity-button minus-button", "removeFlower("+i+")", "-");
+        html += createInput("qt-val-"+i, "quantity-value", "number", "0", "0", "5", "updateState(this,"+i+")");
+        html += createButton("qt-plus-btn-"+i, "quantity-button plus-button", "addFlower("+i+")", "+");
+        html += closeDiv();
+
+        html += openDiv("", "item-row");
+        html += "<input id='checkbox" + i + "' type='checkbox' onclick='checkboxClicked(" + i + ")'>";
+        html += closeDiv();
+
+        html += closeDiv();
+    }
+
+    return html;
+}
+
+function openDiv(id,theClass) {
+    return "<div id='" + id + "' class='" + theClass + "'>";
+}
+
+function closeDiv() {
+    return "</div>";
+}
+
+function createButton(id, theClass, onclick, text) {
+    return "<button id='" + id +"' class='"+ theClass + "' onclick='" + onclick + "'>" + text + "</button>"
+}
+
+function createInput(id, theClass, type, value, min, max, oninput) {
+    return "<input id='" + id + "' class='"+ theClass +"' type='" + type +"' value='" + value + "' min='" + min + "' max='" + max + "' oninput='" + oninput + "'>";
+}

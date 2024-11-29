@@ -1,34 +1,39 @@
 
-const dialog = document.getElementById("popup-dialog");
+var data = ""
 
-function openAndSelect(element) {
-    // Handle opening the popu
-    console.log(element);
-    const imgElement = element.querySelector('img');
-    openPopUp(imgElement.src, imgElement.alt);
+function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
+    const dialog = document.getElementById("popup-dialog");
 
-    // Remove the "selected" class from all flower boxes
-    document.querySelectorAll('.flower-box').forEach((box) => {
-        box.classList.remove('selected');
-    });
-
-    // Add the "selected" class to the clicked flower box
-    element.classList.add('selected');
-}
-
-
-function openPopUp(_src, _alt) {
-    
-    //set the image
     const image = document.getElementById("popup-image");
     image.src = _src;
 
     const title = document.getElementById("popup-title");
-    title.innerHTML = _alt
-    
+    title.innerHTML = popupTitle
+
+    const description = document.getElementById("popup-description");
+    description.innerHTML = popupDescription
+
+    data = id.getAttribute("value")
+
     dialog.showModal();
 }
 
-function closePopUp() {
-    dialog.close();
+
+function changePage(path) {
+    url = path + '?data=' + data;
+
+    window.location.href = url;
+
+function closePopup(dialogElement) {
+    const dialog = document.getElementById(dialogElement);
+
+    dialog.addEventListener('click', function(event) {
+        var rect = dialog.getBoundingClientRect();
+        var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+          dialog.close();
+        }
+      });
+    }
 }

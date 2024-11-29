@@ -71,7 +71,7 @@
 
 
     <div class="carousel-row">
-        <h1><a onclick="moveCarouselLeft()"><</a></h1>
+        <h1><a onclick="moveCarouselLeft()"></a></h1>
         <div class="carousel-column">
             <h1>Trending</h1>
             <div class="slides">
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="buttons">
-                <button type="button" onclick = "window.location.href='./html/customize.html';">Customize</button>
+                <button type="button" onclick = "changePage3('./html/customize.html')">Customize</button>
                 <button type="button">Add to Cart</button>
             </div>
             <form name="carousel-selection" class="radio-buttons">
@@ -107,7 +107,7 @@
                 <input type="radio" id = "r3" name="carousel-radio-button" onclick="showSlide()"><label for="r3"></label>
             </form>
         </div>
-        <h1><a onclick="moveCarouselRight()">></a></h1>
+        <h1><a onclick="moveCarouselRight()"></a></h1>
     </div>
 
 
@@ -121,35 +121,35 @@
             <img  src="./assets/bouquet2.png" alt="Bouquet 2">
             <h1>Bouquet 2</h1>
         </div>
-        <div class="flower-box" onclick="openPopUp('./assets/bouquet3.png', 'Bouquet 3', 'This is a description for Bouquet 3')">
+        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet3.png', 'Bouquet 3', 'This is a description for Bouquet 3', this)">
             <img  src="./assets/bouquet3.png" alt="Bouquet 3">
             <h1>Bouquet 3</h1>
         </div>
-        <div class="flower-box" onclick="openPopUp('./assets/bouquet4.png', 'Bouquet 4', 'This is a description for Bouquet 4')">
+        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet4.png', 'Bouquet 4', 'This is a description for Bouquet 4', this)">
             <img  src="./assets/bouquet4.png" alt="Bouquet 4">
             <h1>Bouquet 4</h1>
         </div>
-        <div class="flower-box" onclick="openPopUp('./assets/bouquet5.png', 'Bouquet 5', 'This is a description for Bouquet 5')">
+        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet5.png', 'Bouquet 5', 'This is a description for Bouquet 5', this)">
             <img  src="./assets/bouquet5.png" alt="Bouquet 5">
             <h1>Bouquet 5</h1>
         </div>
-        <div class="flower-box" onclick="openPopUp('./assets/bouquet6.png', 'Bouquet 6', 'This is a description for Bouquet 6')">
+        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet6.png', 'Bouquet 6', 'This is a description for Bouquet 6', this)">
             <img  src="./assets/bouquet6.png" alt="Bouquet 6">
             <h1>Bouquet 6</h1>
         </div>
     </div>
 
 
-    <dialog id="popup-dialog">
-        <button onclick="closePopUp()" id="popup-close-btn" class="popup-btn">&#10006</button>
+    <dialog class="popup" id="popup-dialog" onclick="closePopup('popup-dialog')">
+        <form method="dialog"><button class="popup-close">&#10006</button></form>
         <h2 id="popup-title"></h2>
         <div>
-            <img src="" alt="" id="popup-image" width=300px>
-            <p id="popup-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img src="" alt="" id="popup-image">
+            <p id="popup-description"></p>
         </div>
         <div id="popup-btn-container">
-            <button id="popup-add-cart-btn" class="popup-btn">Add to Cart</button>
-            <button id="popup-custom-btn" class="popup-btn" onclick = "window.location.href='./html/customize.html';" >Customize</button>
+            <button id="popup-custom-btn" class="popup-btn custom-button" onclick = "changePage('./html/customize.html')" >Customize</button>
+            <button id="popup-add-cart-btn" class="popup-btn cart-button">Add to Cart</button>
         </div>
     </dialog>
     <script type="text/javascript" src="scripts/popup.js"></script>
