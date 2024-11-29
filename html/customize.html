@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../scripts/customize.js"></script>
     <script type="text/javascript" src="../scripts/popup.js"></script>
     <script type="text/javascript" src="../scripts/quantity-input.js"></script>
+    <script type="text/javascript" src="../scripts/transfer.js"></script>
 
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/customize.css">
@@ -48,20 +49,7 @@
             </div>
         </nav>
     </div>
-
-    <div class="navbar-customize">
-        <div>
-
-            <button class="custom navbar-button">
-                <a href="customize.html"><h3>Create Your Own Bouquet</h3></a>
-            </button>
-        </div>
-
-        <div class="navbar_cart" > 
-            <img  src="../assets/shopping-cart.png" alt="cart">
-        </div>
-
-    </div>
+    <h1><a class="custom navbar-button" onclick="changePage2('./customize.html', '0:0,1:0,2:0,3:0,4:0,5:0?vase=5')">Create a Custom Bouquet</a></h1>
 </nav>
 
 
@@ -91,8 +79,10 @@
                 <button class="filter_btn active" id="all_btn" onclick="filterSelection('all')"> Show all</button>
                 <button class="filter_btn" onclick="filterSelection('red')"> Red</button>
                 <button class="filter_btn" onclick="filterSelection('blue')"> Blue</button>
-                <button class="filter_btn" onclick="filterSelection('green')"> Green</button>
                 <button class="filter_btn" onclick="filterSelection('yellow')"> Yellow</button>
+                <button class="filter_btn" onclick="filterSelection('black')"> Black</button>
+                <button class="filter_btn" onclick="filterSelection('white')"> White</button>
+                <button class="filter_btn" onclick="filterSelection('purple')"> Purple</button>
             </div>
             <!-- FLOWER GRID -->
             <div class="select_grid" id="flower-grid">
@@ -184,16 +174,16 @@
             <!-- VASE GRID -->
             <div class="select_grid" id="vase-grid">
 
-                <div id="select-vase-0" class="select_item yellow">
-                    <button class="info-button" onclick="openInfo(0, 'vase')">i</button>
+                <div id="select-vase-0" class="select_item yellow" onclick="toggleCheckbox(0, 'vase')">
+                    <button class="info-button" onclick="openInfo(0, 'vase'); event.stopPropagation()">i</button>
                     <div id="vase-image-0" class="item"></div>
                     <div class="item-row">
                         <input class="checkbox" id="checkbox-vase-0" type="checkbox" onclick="checkboxClicked(0, 'vase'); addVase(0)">
                     </div>
                 </div>
                 
-                <div id="select-vase-1" class="select_item red">
-                    <button class="info-button" onclick="openInfo(1, 'vase')">i</button>
+                <div id="select-vase-1" class="select_item red" onclick="toggleCheckbox(1, 'vase')">
+                    <button class="info-button" onclick="openInfo(1, 'vase'); event.stopPropagation()">i</button>
                     <div id="vase-image-1" class="item"></div>
                     <div class="item-row">
                         <input class="checkbox" id="checkbox-vase-1" type="checkbox" onclick="checkboxClicked(1, 'vase'); addVase(1)">
@@ -201,8 +191,8 @@
                     
                 </div>
                 
-                <div id="select-vase-2" class="select_item red">
-                    <button class="info-button" onclick="openInfo(2, 'vase')">i</button>
+                <div id="select-vase-2" class="select_item red" onclick="toggleCheckbox(2, 'vase')">
+                    <button class="info-button" onclick="openInfo(2, 'vase'); event.stopPropagation()">i</button>
                     <div id="vase-image-2" class="item"></div>
                     <div class="item-row">
                         <input class="checkbox" id="checkbox-vase-2" type="checkbox" onclick="checkboxClicked(2, 'vase'); addVase(2)">
@@ -210,8 +200,8 @@
                     
                 </div>
                 
-                <div id="select-vase-3" class="select_item blue" >
-                    <button class="info-button" onclick="openInfo(3, 'vase')">i</button>
+                <div id="select-vase-3" class="select_item blue" onclick="toggleCheckbox(3, 'vase')">
+                    <button class="info-button" onclick="openInfo(3, 'vase'); event.stopPropagation()">i</button>
                     <div id="vase-image-3" class="item"></div>
                     <div class="item-row">
                         <input class="checkbox" id="checkbox-vase-3" type="checkbox" onclick="checkboxClicked(3, 'vase'); addVase(3)">
