@@ -3,9 +3,11 @@
     align-items: center;
     justify-content: space-around;
     width: min(100%, 750px);
-    background: #FF7A8B;
+    background: white;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #025a05; 
 }
 
 .flower-box img{
@@ -15,6 +17,22 @@
 
 .flower-box-grid{
     display: grid;
-    gap: 20px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px 40px;
+    padding-bottom: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.flower-box:hover {
+    /* Optionally, you can add other hover styles here */
+    background-color: #eff7ef; /* Example: change background color on hover */
+    transform: scale(1.05); /* Example: slight zoom effect on hover */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth transition */
+}
+
+.flower-box.selected {
+    background-color: #eff7ef; /* Keep the hover color when selected */
+    transform: scale(1.05); /* Optional: keep the zoom effect */
 }

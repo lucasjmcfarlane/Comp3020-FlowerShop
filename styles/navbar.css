@@ -1,27 +1,83 @@
 .navbar {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping if items don't fit */
     justify-content: space-between;
     align-items: center;
-    background-color:#4CAF50;
-    padding: 0 50px 0 50px;
+    text-align: center;
+    background-color: #4CAF50;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box; 
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+body{
+    margin: 0; 
+    box-sizing: border-box;
 }
 
 .logo {
-    text-decoration: none;
+    text-decoration:wavy;
     color: white;
-}
+    font-size: bold;
+    font-style:oblique;
+} 
 
 .categories {
     display: flex;
 }
 
-.custom {
+.navbar-button a {
     text-decoration: none;
+    
+    font-style: italic;
     color: white;
+    display: block; /* Ensures it spans the button area */
+    transition: color 0.3s ease;
 }
 
-.navbar-button{
-    padding: 10px;
+
+.navbar-button:hover {
+    background-color: #c2e8c4; 
+    color: #025a05; 
+}
+
+.navbar-button:hover a {
+    color: #025a05; 
+}
+
+.navbar_cart{
+    display: inline-block;
+}
+
+.navbar-button:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
+}
+
+.navbar-button {
+    background-color: #025a05; 
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease; 
+    display: inline-block;
+    position: relative; 
+    text-align: center;
 }
 
 .nav-item {
@@ -49,7 +105,8 @@
 }
 
 .navbar-button:hover{
-    background-color: #3e8e41;
+    background-color: #c2e8c4;
+    color: #025a05;
 }
 
 .nav-item-content a:hover {
@@ -58,4 +115,46 @@
 
 .dropdown:hover .nav-item-content {
     display: block;
+}
+
+.navbar-customize{
+    display: flex;
+    font-size: 1rem;
+}
+
+.navbar_cart{
+    padding-left: 10px;
+    padding-top: 7.5px;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* 
+} */
+
+@media (max-width: 900px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .categories, .navbar-customize {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #4CAF50;
+    }
 }

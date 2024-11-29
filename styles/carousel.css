@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 30px 0 30px;
+    color: #025a05; 
 }
 
 .carousel-row h1 a{
@@ -20,6 +21,21 @@
     align-items: center;
 }
 
+.carousel-row h1{
+    padding-top: 80px;
+}
+
+.carousel-row buttons{
+    padding-top: 20px;
+}
+.radio-buttons{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.radio_btn{
+    cursor: pointer;
+}
+
 .slide{
     display: none;
     flex-direction: row;
@@ -29,4 +45,49 @@
 
 .slide img{
     height: 450px;
+    padding-left: 80px;
+}
+
+.popup-btn {
+    float: right;
+    margin: 0.2em;
+}
+
+#popup-image {
+    float: left;
+}
+
+#popup-description {
+    float: left;
+    width:300px;
+    margin-left: 0.5em;
+}
+
+#popup-btn-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin:1em;
+}
+
+
+.carousel-row button{
+    padding: 1em;
+    margin-top: 0.3em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    border: none;
+    border-radius: 15px;
+}
+
+.carousel_customize{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(245, 76, 76);
+}
+
+.carousel_addtocart{
+    color: white;
+    background-color: rgb(32, 203, 32);
+    cursor: pointer
 }
