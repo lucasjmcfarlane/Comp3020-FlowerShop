@@ -1,6 +1,17 @@
 window.onload=function(){
+    var url = window.location.href;
+    console.log(url)
+    params = url.split('?')[1].split("=")[1].split(",");
+    
+    var data = {};
+    var tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split(':');
+         data[tmp[0]] = tmp[1];
+    }
+
     filterSetup();
-    initializeFlowers();
+    initializeFlowers(data);
     initializeVases();
     initializeGrid();
 }
@@ -75,8 +86,9 @@ class Vase {
     }
 }
 
-function initializeFlowers() {
+function initializeFlowers(flowers) {
     // new Flower(id, name, price, color, quantity, imageSource)
+  
     allFlowers[0] = new Flower(0, "Sunflower", 1, "yellow", 0,"../assets/flower1.png");
     allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", 0, "../assets/flower2.png");
     allFlowers[2] = new Flower(2,"Red Flower 2", 1, "red", 0, "../assets/flower3.png");
@@ -84,8 +96,19 @@ function initializeFlowers() {
     allFlowers[4] = new Flower(4,"White Flower", 1, "white", 0, "../assets/flower5.png");
     allFlowers[5] = new Flower(5,"Red Sunflower", 1, "red", 0, "../assets/flower6.png");
 
+    for (let index = 0; index < allFlowers.length; index++) {
+        const element = document.getElementById("qt-val-"+index);
+        var currFlower = allFlowers[index];
+        element.value = currFlower.quantity;
+        updateState(element,index)
+        if (currFlower.quantity > 0) {
+            const checkbox = document.getElementById("checkbox"+index).click();
+        }
+    }
     printFlowerImages();
     printFlowerPreview();
+
+
 }
 
 function initializeVases() {
@@ -355,6 +378,25 @@ function checkboxClicked(index, type){
     }
 }
 
+
+
+// window.onload=function(){
+//     var url = window.location.href;
+//     console.log(url)
+//     params = url.split('?')[1].split("=")[1].split(",");
+    
+//     var data = {};
+//     var tmp;
+//     for (var i = 0, l = params.length; i < l; i++) {
+//          tmp = params[i].split(':');
+//          data[tmp[0]] = tmp[1];
+//     }
+
+//     filterSetup();
+//     initializeFlowers(data);
+//     printFlowerImages();
+//     printFlowerPreview();
+// }
 function updateState(input,index) {
     var num = parseInt(input.value)
     if (input.value == "")

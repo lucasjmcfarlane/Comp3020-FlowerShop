@@ -1,6 +1,7 @@
 
+var data = ""
 
-function openPopUp(popupImagePath, popupTitle, popupDescription) {
+function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
     const dialog = document.getElementById("popup-dialog");
 
     const image = document.getElementById("popup-image");
@@ -12,8 +13,16 @@ function openPopUp(popupImagePath, popupTitle, popupDescription) {
     const description = document.getElementById("popup-description");
     description.innerHTML = popupDescription
 
+    data = id.getAttribute("value")
+
     dialog.showModal();
 }
+
+
+function changePage(path) {
+    url = path + '?data=' + data;
+
+    window.location.href = url;
 
 function closePopup(dialogElement) {
     const dialog = document.getElementById(dialogElement);
@@ -26,4 +35,5 @@ function closePopup(dialogElement) {
           dialog.close();
         }
       });
+    }
 }
