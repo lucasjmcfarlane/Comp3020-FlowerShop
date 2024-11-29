@@ -369,12 +369,16 @@ function checkboxClicked(index, type){
     if (checkbox.checked){
         selectItem.style.border = "2px solid blue";
         selectItem.style.margin = "0 6px 6px 0";
-        quantityInput.style.display = "flex"
+        if (type == 'flower') {
+            quantityInput.style.display = "flex"
+        }  
     }
     else{
         selectItem.style.border = "";
         selectItem.style.margin = "0 10px 10px 0";
-        quantityInput.style.display = "none"
+        if (type == 'flower') {
+            quantityInput.style.display = "none"
+        }
     }
 }
 
