@@ -281,8 +281,8 @@ function printFlowerPreview() {
     }
 }
 
-function toggleCheckbox(index){
-    const checkbox = document.getElementById("checkbox" + index);
+function toggleCheckbox(index, type){
+    const checkbox = document.getElementById("checkbox-" + type + "-" + index);
     const numFlowers = document.getElementById("qt-val-" + index).value;
     if (checkbox.checked){
         for (let i = 0; i<numFlowers; i++){
