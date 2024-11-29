@@ -1,18 +1,20 @@
 window.onload=function(){
     var url = window.location.href;
     console.log(url)
-    params = url.split('?')[1].split("=")[1].split(",");
-    
+    var flowers = url.split('?')[1].split("=")[1].split(",");
+    var vase = url.split('?')[2].split("=")[1]
+    console.log(flowers)
+    console.log(vase)
     var data = {};
     var tmp;
-    for (var i = 0, l = params.length; i < l; i++) {
-         tmp = params[i].split(':');
+    for (var i = 0, l = flowers.length; i < l; i++) {
+         tmp = flowers[i].split(':');
          data[tmp[0]] = tmp[1];
     }
 
     filterSetup();
     initializeFlowers(data);
-    initializeVases();
+    initializeVases(vase);
     initializeGrid();
 }
 
@@ -89,20 +91,21 @@ class Vase {
 function initializeFlowers(flowers) {
     // new Flower(id, name, price, color, quantity, imageSource)
   
-    allFlowers[0] = new Flower(0, "Sunflower", 1, "yellow", 0,"../assets/flower1.png");
-    allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", 0, "../assets/flower2.png");
-    allFlowers[2] = new Flower(2,"Red Flower 2", 1, "red", 0, "../assets/flower3.png");
-    allFlowers[3] = new Flower(3,"Blue Rose", 1, "blue", 0, "../assets/flower4.png");
-    allFlowers[4] = new Flower(4,"White Flower", 1, "white", 0, "../assets/flower5.png");
-    allFlowers[5] = new Flower(5,"Red Sunflower", 1, "red", 0, "../assets/flower6.png");
+    allFlowers[0] = new Flower(0, "Sunflower", 1, "yellow", flowers[0],"../assets/flower1.png");
+    allFlowers[1] = new Flower(1,"Red Flower 1", 1, "red", flowers[1], "../assets/flower2.png");
+    allFlowers[2] = new Flower(2,"Red Flower 2", 1, "red", flowers[2], "../assets/flower3.png");
+    allFlowers[3] = new Flower(3,"Blue Rose", 1, "blue", flowers[3], "../assets/flower4.png");
+    allFlowers[4] = new Flower(4,"White Flower", 1, "white", flowers[4], "../assets/flower5.png");
+    allFlowers[5] = new Flower(5,"Red Sunflower", 1, "red", flowers[5], "../assets/flower6.png");
 
     for (let index = 0; index < allFlowers.length; index++) {
         const element = document.getElementById("qt-val-"+index);
         var currFlower = allFlowers[index];
-        element.value = currFlower.quantity;
+        element.value = currFlower.quantity-1;
         updateState(element,index)
         if (currFlower.quantity > 0) {
-            const checkbox = document.getElementById("checkbox"+index).click();
+            console.log(element.value)
+            document.getElementById("select-flower-"+index).click();
         }
     }
     printFlowerImages();
@@ -111,13 +114,16 @@ function initializeFlowers(flowers) {
 
 }
 
-function initializeVases() {
+function initializeVases(vase) {
     // new Vase(id, name, price, color, quantity, imageSource)
     allVases[0] = new Vase(0, "Purple Floral Vase", 15, "purple", 0, "../assets/vase1.png");
     allVases[1] = new Vase(1, "Purple Vase", 10, "purple", 0, "../assets/vase2.png");
     allVases[2] = new Vase(2, "Black Floral Vase", 20, "black", 0, "../assets/vase3.png");
     allVases[3] = new Vase(3, "White Designer Vase", 35, "white", 0, "../assets/vase4.png");
-
+    if (vase < 4) {
+        addVase(vase)
+        document.getElementById("select-vase-"+vase).click();
+    }
     printVaseImages();
     printVasePreview();
 }
@@ -140,8 +146,19 @@ function removeFlower(index) {
 }
 
 function addVase(index) {
-    allVases[index].plusOne();
-
+    for (let i = 0; i < allVases.length; i++) {
+        if (i != index) {
+            removeVase(i);
+            const checkbox = document.getElementById("checkbox-vase-" + i);
+            if (checkbox.checked) {
+                checkbox.checked = !checkbox.checked;
+                checkboxClicked(i, 'vase');
+            }
+        } else {
+            allVases[index].plusOne();
+        }
+    }
+    
     //update the vase preview
     printVasePreview();
 }
@@ -176,6 +193,11 @@ function updateQuantityMinusButton(quantity, index) {
     const button = document.getElementById(MINUS_BUTTON_ELEMENT+index);
     if (quantity <= 0) {
         button.disabled = true;
+        const checkbox = document.getElementById("checkbox-flower-" + index);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(index, 'flower');
+        }
     } else {
         button.disabled = false;
     }
@@ -199,19 +221,28 @@ function resetSelections() {
         var currFlower = allFlowers[i];
         currFlower.quantity = 0;
         updateFlowerQuantity(i);
+        const checkbox = document.getElementById("checkbox-flower-" + i);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(i, 'flower');
+        }
     }
 
     // go through every vases and reset the quantity to zero
     for (let i = 0; i < allVases.length; i++) {
         var currVase = allVases[i];
         currVase.quantity = 0;
+
+        const checkbox = document.getElementById("checkbox-vase-" + i);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(i, 'vase');
+        }
     }
 
     // update preview
     printFlowerPreview();
     printVasePreview();
-
-    // de-select everything
 }
 
 
@@ -307,16 +338,32 @@ function printFlowerPreview() {
 function toggleCheckbox(index, type){
     const checkbox = document.getElementById("checkbox-" + type + "-" + index);
     const numFlowers = document.getElementById("qt-val-" + index).value;
+    var turnoff = false;
+
     if (checkbox.checked){
-        for (let i = 0; i<numFlowers; i++){
-            removeFlower(index);
+        if (type == 'flower') {
+            for (let i = 0; i<numFlowers; i++){
+                removeFlower(index);
+            }
+        } else if (type == 'vase') {
+            removeVase(index);
+        }
+        turnoff = true;
+    }
+    else {
+        if (type == 'flower') {
+            addFlower(index);
+        } else if (type == 'vase') {
+            addVase(index);
         }
     }
-    else{
-        addFlower(index);
+    console.log(checkbox.checked);
+    if (turnoff) {
+        checkbox.checked = false;
+    } else {
+        checkbox.checked = true;
     }
-    checkbox.checked = !checkbox.checked;
-    checkboxClicked(index,'flower');
+    checkboxClicked(index, type);
 }
 
 function checkboxClicked(index, type){
@@ -328,12 +375,16 @@ function checkboxClicked(index, type){
     if (checkbox.checked){
         selectItem.style.border = "2px solid blue";
         selectItem.style.margin = "0 6px 6px 0";
-        quantityInput.style.display = "flex"
+        if (type == 'flower') {
+            quantityInput.style.display = "flex"
+        }  
     }
     else{
         selectItem.style.border = "";
         selectItem.style.margin = "0 10px 10px 0";
-        quantityInput.style.display = "none"
+        if (type == 'flower') {
+            quantityInput.style.display = "none"
+        }
     }
 }
 

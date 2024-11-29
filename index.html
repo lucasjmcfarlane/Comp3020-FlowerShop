@@ -46,30 +46,30 @@
                 </div>
             </nav>
         </div>
-        <h1><a class="custom navbar-button" onclick="changePage2('./html/customize.html', '0:0,1:0,2:0,3:0,4:0')">Create a Custom Bouquet</a></h1>
+        <h1><a class="custom navbar-button" onclick="changePage2('./html/customize.html', '0:0,1:0,2:0,3:0,4:0,5:0?vase=5')">Create a Custom Bouquet</a></h1>
     </nav>
 
 
     <div class="carousel-row">
-        <h1><a onclick="moveCarouselLeft()"></a></h1>
+        <h1><a onclick="moveCarouselLeft()"><</a></h1>
         <div class="carousel-column">
             <h1>Trending</h1>
             <div class="slides">
-                <div class="slide" id="slide1" value="0:3,1:1,2:0,3:2,4:0">
+                <div class="slide" id="slide1" value="0:5,1:0,2:0,3:0,4:3,5:0?vase=3">
                     <img src="assets/bouquet1.png" alt="">
                     <div>
                         <h1>Bouquet 1</h1>
                         <h3>It's a good bouquet</h3>
                     </div>
                 </div>
-                <div class="slide" id="slide2" value="0:1,1:1,2:2,3:2,4:1">
+                <div class="slide" id="slide2" value="0:0,1:4,2:4,3:0,4:0,5:0?vase=1">
                     <img src="assets/bouquet2.png" alt="">
                     <div>
                         <h1>Bouquet 2</h1>
                         <h3>It's a good bouquet</h3>
                     </div>
                 </div>
-                <div class="slide" id="slide3" value="0:0,1:0,2:2,3:2,4:3">
+                <div class="slide" id="slide3" value="0:0,1:0,2:0,3:5,4:5,5:0?vase=2">
                     <img src="assets/bouquet3.png" alt="">
                     <div>
                         <h1>Bouquet 3</h1>
@@ -87,33 +87,33 @@
                 <input type="radio" id = "r3" name="carousel-radio-button" onclick="showSlide()"><label for="r3"></label>
             </form>
         </div>
-        <h1><a onclick="moveCarouselRight()"></a></h1>
+        <h1><a onclick="moveCarouselRight()">></a></h1>
     </div>
 
 
     <h1 class="section-title">Featured Items</h1>
     <div class="flower-box-grid">
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet1.png', 'Bouquet 1', 'This is a description for Bouquet 1', this)">
+        <div class="flower-box" value="0:5,1:0,2:0,3:0,4:3,5:0?vase=3" onclick="openPopUp('./assets/bouquet1.png', 'Bouquet 1', 'This is a description for Bouquet 1', this)">
             <img  src="./assets/bouquet1.png" alt="Bouquet 1">
             <h1>Bouquet 1</h1>
         </div>
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet2.png', 'Bouquet 2', 'This is a description for Bouquet 2', this)">
+        <div class="flower-box" value="0:0,1:4,2:4,3:0,4:0,5:0?vase=1" onclick="openPopUp('./assets/bouquet2.png', 'Bouquet 2', 'This is a description for Bouquet 2', this)">
             <img  src="./assets/bouquet2.png" alt="Bouquet 2">
             <h1>Bouquet 2</h1>
         </div>
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet3.png', 'Bouquet 3', 'This is a description for Bouquet 3', this)">
+        <div class="flower-box" value="0:0,1:0,2:0,3:5,4:5,5:0?vase=2" onclick="openPopUp('./assets/bouquet3.png', 'Bouquet 3', 'This is a description for Bouquet 3', this)">
             <img  src="./assets/bouquet3.png" alt="Bouquet 3">
             <h1>Bouquet 3</h1>
         </div>
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet4.png', 'Bouquet 4', 'This is a description for Bouquet 4', this)">
+        <div class="flower-box" value="0:2,1:0,2:5,3:0,4:0,5:0?vase=0" onclick="openPopUp('./assets/bouquet4.png', 'Bouquet 4', 'This is a description for Bouquet 4', this)">
             <img  src="./assets/bouquet4.png" alt="Bouquet 4">
             <h1>Bouquet 4</h1>
         </div>
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet5.png', 'Bouquet 5', 'This is a description for Bouquet 5', this)">
+        <div class="flower-box" value="0:0,1:5,2:0,3:3,4:0,5:0?vase=3" onclick="openPopUp('./assets/bouquet5.png', 'Bouquet 5', 'This is a description for Bouquet 5', this)">
             <img  src="./assets/bouquet5.png" alt="Bouquet 5">
             <h1>Bouquet 5</h1>
         </div>
-        <div class="flower-box" value="0:3,1:1,2:0,3:2,4:0" onclick="openPopUp('./assets/bouquet6.png', 'Bouquet 6', 'This is a description for Bouquet 6', this)">
+        <div class="flower-box" value="0:0,1:0,2:5,3:0,4:0,5:0?vase=2" onclick="openPopUp('./assets/bouquet6.png', 'Bouquet 6', 'This is a description for Bouquet 6', this)">
             <img  src="./assets/bouquet6.png" alt="Bouquet 6">
             <h1>Bouquet 6</h1>
         </div>
