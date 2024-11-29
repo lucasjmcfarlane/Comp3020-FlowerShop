@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../scripts/customize.js"></script>
     <script type="text/javascript" src="../scripts/popup.js"></script>
     <script type="text/javascript" src="../scripts/quantity-input.js"></script>
+    <script type="text/javascript" src="../scripts/transfer.js"></script>
 
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/customize.css">
@@ -45,7 +46,7 @@
             </div>
         </nav>
     </div>
-    <h1><a class="custom navbar-button" href="./customize.html">Create a Custom Bouquet</a></h1>
+    <h1><a class="custom navbar-button" onclick="changePage2('./customize.html', '0:0,1:0,2:0,3:0,4:0,5:0?vase=5')">Create a Custom Bouquet</a></h1>
 </nav>
 
 
@@ -75,8 +76,10 @@
                 <button class="filter_btn active" id="all_btn" onclick="filterSelection('all')"> Show all</button>
                 <button class="filter_btn" onclick="filterSelection('red')"> Red</button>
                 <button class="filter_btn" onclick="filterSelection('blue')"> Blue</button>
-                <button class="filter_btn" onclick="filterSelection('green')"> Green</button>
                 <button class="filter_btn" onclick="filterSelection('yellow')"> Yellow</button>
+                <button class="filter_btn" onclick="filterSelection('black')"> Black</button>
+                <button class="filter_btn" onclick="filterSelection('white')"> White</button>
+                <button class="filter_btn" onclick="filterSelection('purple')"> Purple</button>
             </div>
             <!-- FLOWER GRID -->
             <div class="select_grid" id="flower-grid">
