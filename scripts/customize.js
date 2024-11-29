@@ -105,7 +105,6 @@ function initializeFlowers(flowers) {
         updateState(element,index)
         if (currFlower.quantity > 0) {
             console.log(element.value)
-            // element.value = element.value-1
             document.getElementById("select-flower-"+index).click();
         }
     }
@@ -122,6 +121,7 @@ function initializeVases(vase) {
     allVases[2] = new Vase(2, "Black Floral Vase", 20, "black", 0, "../assets/vase3.png");
     allVases[3] = new Vase(3, "White Designer Vase", 35, "white", 0, "../assets/vase4.png");
     addVase(vase)
+    document.getElementById("checkbox-vase-"+vase).click();
     printVaseImages();
     printVasePreview();
 }
