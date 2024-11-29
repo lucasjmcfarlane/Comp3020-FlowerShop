@@ -122,7 +122,7 @@ function initializeVases(vase) {
     allVases[3] = new Vase(3, "White Designer Vase", 35, "white", 0, "../assets/vase4.png");
     if (vase < 4) {
         addVase(vase)
-        document.getElementById("checkbox-vase-"+vase).click();
+        document.getElementById("select-vase-"+vase).click();
     }
     printVaseImages();
     printVasePreview();
