@@ -117,8 +117,19 @@ function removeFlower(index) {
 }
 
 function addVase(index) {
-    allVases[index].plusOne();
-
+    for (let i = 0; i < allVases.length; i++) {
+        if (i != index) {
+            removeVase(i);
+            const checkbox = document.getElementById("checkbox-vase-" + i);
+            if (checkbox.checked) {
+                checkbox.checked = !checkbox.checked;
+                checkboxClicked(i, 'vase');
+            }
+        } else {
+            allVases[index].plusOne();
+        }
+    }
+    
     //update the vase preview
     printVasePreview();
 }
@@ -153,6 +164,11 @@ function updateQuantityMinusButton(quantity, index) {
     const button = document.getElementById(MINUS_BUTTON_ELEMENT+index);
     if (quantity <= 0) {
         button.disabled = true;
+        const checkbox = document.getElementById("checkbox-flower-" + index);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(index, 'flower');
+        }
     } else {
         button.disabled = false;
     }
@@ -176,19 +192,28 @@ function resetSelections() {
         var currFlower = allFlowers[i];
         currFlower.quantity = 0;
         updateFlowerQuantity(i);
+        const checkbox = document.getElementById("checkbox-flower-" + i);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(i, 'flower');
+        }
     }
 
     // go through every vases and reset the quantity to zero
     for (let i = 0; i < allVases.length; i++) {
         var currVase = allVases[i];
         currVase.quantity = 0;
+
+        const checkbox = document.getElementById("checkbox-vase-" + i);
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked;
+            checkboxClicked(i, 'vase');
+        }
     }
 
     // update preview
     printFlowerPreview();
     printVasePreview();
-
-    // de-select everything
 }
 
 
@@ -284,16 +309,32 @@ function printFlowerPreview() {
 function toggleCheckbox(index, type){
     const checkbox = document.getElementById("checkbox-" + type + "-" + index);
     const numFlowers = document.getElementById("qt-val-" + index).value;
+    var turnoff = false;
+
     if (checkbox.checked){
-        for (let i = 0; i<numFlowers; i++){
-            removeFlower(index);
+        if (type == 'flower') {
+            for (let i = 0; i<numFlowers; i++){
+                removeFlower(index);
+            }
+        } else if (type == 'vase') {
+            removeVase(index);
+        }
+        turnoff = true;
+    }
+    else {
+        if (type == 'flower') {
+            addFlower(index);
+        } else if (type == 'vase') {
+            addVase(index);
         }
     }
-    else{
-        addFlower(index);
+    console.log(checkbox.checked);
+    if (turnoff) {
+        checkbox.checked = false;
+    } else {
+        checkbox.checked = true;
     }
-    checkbox.checked = !checkbox.checked;
-    checkboxClicked(index,'flower');
+    checkboxClicked(index, type);
 }
 
 function checkboxClicked(index, type){
