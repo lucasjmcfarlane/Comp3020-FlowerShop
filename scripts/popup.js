@@ -8,10 +8,10 @@ function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
     image.src = popupImagePath;
 
     const title = document.getElementById("popup-title");
-    title.innerHTML = popupTitle
+    title.innerHTML = popupTitle;
 
     const description = document.getElementById("popup-description");
-    description.innerHTML = popupDescription
+    description.innerHTML = popupDescription;
 
     data = id.getAttribute("value")
 
