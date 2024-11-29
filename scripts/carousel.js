@@ -41,3 +41,27 @@ function showSlide() {
 }
 
 setInterval(moveCarouselRight, 7000);
+
+
+
+function changePage3(path) {
+    var id = null;
+    slides = document.getElementsByClassName("slide");
+    console.log(slides);
+    for (let index = 1; index < slides.length+1; index++) {
+        id = document.getElementById("slide"+index);
+        console.log(id);
+        console.log(id.style.display);
+        if (id.style.display == "flex") {
+            break;
+        }
+        
+    }
+    console.log(id);
+    data = id.getAttribute("value");
+    url = path + '?data=' + data;
+    console.log(data);
+    console.log(url);
+    window.location.href = url;
+
+}
