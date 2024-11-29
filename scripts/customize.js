@@ -491,18 +491,24 @@ function RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-function showFlowerGrid() {
+function showFlowerGrid(element) {
     const flowerGrid = document.getElementById("flower-grid");
     const vaseGrid = document.getElementById("vase-grid");
     flowerGrid.style.display = "flex";
     vaseGrid.style.display = "none";
+    const btns = document.getElementsByClassName("selection_btn");
+    AddClass(btns[0], "active2")
+    RemoveClass(btns[1], "active2")
 }
 
-function showVaseGrid() {
+function showVaseGrid(element) {
     const flowerGrid = document.getElementById("flower-grid");
     const vaseGrid = document.getElementById("vase-grid");
     flowerGrid.style.display = "none";
     vaseGrid.style.display = "flex";
+    const btns = document.getElementsByClassName("selection_btn");
+    AddClass(btns[1], "active2")
+    RemoveClass(btns[0], "active2")
 }
 
 function initializeGrid() {

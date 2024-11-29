@@ -111,6 +111,12 @@
     color: white;
 }
 
+.selection_btn.active2 {
+    background-color: #666;
+    color: white;
+}
+
+
 .preview_container{
     width: 40%;
     margin-left: 15px;
