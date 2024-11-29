@@ -22,7 +22,6 @@
 }
 
 body{
-    padding-top: 80px;
     margin: 0; 
     box-sizing: border-box;
 }
@@ -30,7 +29,9 @@ body{
 .logo {
     text-decoration:wavy;
     color: white;
-}
+    font-size: bold;
+    font-style:oblique;
+} 
 
 .categories {
     display: flex;
@@ -38,6 +39,8 @@ body{
 
 .navbar-button a {
     text-decoration: none;
+    
+    font-style: italic;
     color: white;
     display: block; /* Ensures it spans the button area */
     transition: color 0.3s ease;
@@ -116,9 +119,42 @@ body{
 
 .navbar-customize{
     display: flex;
+    font-size: 1rem;
 }
 
 .navbar_cart{
     padding-left: 10px;
     padding-top: 7.5px;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* 
+} */
+
+@media (max-width: 900px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .categories, .navbar-customize {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #4CAF50;
+    }
 }

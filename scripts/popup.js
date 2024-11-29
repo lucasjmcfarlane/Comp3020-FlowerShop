@@ -5,13 +5,13 @@ function openPopUp(popupImagePath, popupTitle, popupDescription, id) {
     const dialog = document.getElementById("popup-dialog");
 
     const image = document.getElementById("popup-image");
-    image.src = _src;
+    image.src = popupImagePath;
 
     const title = document.getElementById("popup-title");
-    title.innerHTML = popupTitle
+    title.innerHTML = popupTitle;
 
     const description = document.getElementById("popup-description");
-    description.innerHTML = popupDescription
+    description.innerHTML = popupDescription;
 
     data = id.getAttribute("value")
 

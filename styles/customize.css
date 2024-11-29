@@ -126,12 +126,15 @@
     background-color: rgb(245, 76, 76);
     color:#ffffff;
     margin-right: 25%;
+    cursor: pointer;
 }
 
 #preview-buttons-cart {
     background-color: rgb(32, 203, 32);
     color:#ffffff;
     margin-left: 25%;
+    cursor: pointer;
+    
 }
 
 
@@ -211,4 +214,8 @@ button:disabled {
     border-radius: 5px;
     border: none;
     background-color: #eaeaea;
+}
+
+.main_container{
+    padding-top: 80px;
 }

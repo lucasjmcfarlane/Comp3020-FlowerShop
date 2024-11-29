@@ -7,6 +7,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    color: #025a05; 
 }
 
 .flower-box img{
@@ -17,7 +18,10 @@
 .flower-box-grid{
     display: grid;
     gap: 40px 40px;
-    padding: 100px;
+    padding-bottom: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 35px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 

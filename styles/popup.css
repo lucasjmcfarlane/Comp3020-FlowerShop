@@ -46,9 +46,11 @@
 .cart-button {
     color: white;
     background-color: rgb(32, 203, 32);
+    cursor: pointer
 }
 
 .custom-button {
     color: white;
-    background-color: #47a0ff
+    cursor: pointer;
+    background-color: rgb(245, 76, 76);
 }
