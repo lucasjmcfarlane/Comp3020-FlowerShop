@@ -35,4 +35,5 @@ function closePopup(dialogElement) {
           dialog.close();
         }
       });
+    }
 }

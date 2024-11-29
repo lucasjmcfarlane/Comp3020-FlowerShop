@@ -1,6 +1,17 @@
 window.onload=function(){
+    var url = window.location.href;
+    console.log(url)
+    params = url.split('?')[1].split("=")[1].split(",");
+    
+    var data = {};
+    var tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split(':');
+         data[tmp[0]] = tmp[1];
+    }
+
     filterSetup();
-    initializeFlowers();
+    initializeFlowers(data);
     initializeVases();
     initializeGrid();
 }
@@ -328,23 +339,23 @@ function checkboxClicked(index, type){
 
 
 
-window.onload=function(){
-    var url = window.location.href;
-    console.log(url)
-    params = url.split('?')[1].split("=")[1].split(",");
+// window.onload=function(){
+//     var url = window.location.href;
+//     console.log(url)
+//     params = url.split('?')[1].split("=")[1].split(",");
     
-    var data = {};
-    var tmp;
-    for (var i = 0, l = params.length; i < l; i++) {
-         tmp = params[i].split(':');
-         data[tmp[0]] = tmp[1];
-    }
+//     var data = {};
+//     var tmp;
+//     for (var i = 0, l = params.length; i < l; i++) {
+//          tmp = params[i].split(':');
+//          data[tmp[0]] = tmp[1];
+//     }
 
-    filterSetup();
-    initializeFlowers(data);
-    printFlowerImages();
-    printFlowerPreview();
-}
+//     filterSetup();
+//     initializeFlowers(data);
+//     printFlowerImages();
+//     printFlowerPreview();
+// }
 function updateState(input,index) {
     var num = parseInt(input.value)
     if (input.value == "")
