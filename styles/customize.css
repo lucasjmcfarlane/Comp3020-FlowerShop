@@ -97,3 +97,7 @@
 .quantity-value::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
+.checkbox{
+    visibility: hidden;
+}

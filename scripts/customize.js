@@ -49,12 +49,14 @@ function initializeFlowers() {
 }
 
 function addFlower(index) {
+    event.stopPropagation();
     allFlowers[index].plusOne();
 
     var elementId = VALUE_ELEMENT + index;
     updateQuantity(elementId, index)
 }
 function removeFlower(index) {
+    event.stopPropagation();
     allFlowers[index].minusOne();
 
     var elementId = VALUE_ELEMENT + index;
@@ -114,6 +116,21 @@ function printFlowerPreview() {
             }
         }
     }
+}
+
+function toggleCheckbox(index){
+    const checkbox = document.getElementById("checkbox" + index);
+    const numFlowers = document.getElementById("qt-val-" + index).value;
+    if (checkbox.checked){
+        for (let i = 0; i<numFlowers; i++){
+            removeFlower(index);
+        }
+    }
+    else{
+        addFlower(index);
+    }
+    checkbox.checked = !checkbox.checked;
+    checkboxClicked(index);
 }
 
 function checkboxClicked(index){
