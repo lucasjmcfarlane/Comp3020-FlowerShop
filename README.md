@@ -1,1 +1,1 @@
-Find the index.html and click on it it will bring you to the home page of the website.
+Locate index.html in the root directory and open it in Google Chrome. You will be brought to the homepage of our site.
