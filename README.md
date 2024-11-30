@@ -1,1 +1,1 @@
-Locate index.html in the root directory and open it in Google Chrome. You will be brought to the homepage of our site.
+Locate index.html in the root directory and open it in Google Chrome. You will be brought to the homepage of our site. You can go to the customizer by either clicking on the “create your own bouquet” or by clicking on anything that says “customize”.
