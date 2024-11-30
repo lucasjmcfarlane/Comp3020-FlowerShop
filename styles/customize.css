@@ -1,34 +1,23 @@
 .main_container{
-    height: 100vh;
+    height: 90vh;
     display: flex;
 }
 
 .selection_container{
-    width: 62.5%;
+    width: calc(100% - 750px);
     display: flex;
     flex-direction: column;
     border-right: 1px solid gray; /* Optional: Adds a dividing line */
     padding: 20px;
 }
 
-.selection_buttons{
-    margin: 15px;
-
-}
-
 .selection_tabs{
     padding-left: 15px;
-    
 }
 
 .selection_tabs button{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    margin-top: 0.3em;
-    margin-left: 0.3em;
-    margin-right: 0.3em;
+    padding: 1em 1.2rem;
+    margin: 0.3em;
     border: solid 2px rgb(118, 115, 115);
     border-radius: 15px;
     background-color:  white;
@@ -36,12 +25,8 @@
     cursor: pointer;
 }
 
-
-
 .search_bar_input{
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-right: 15px;
+    margin: 15px;
     width: 95%;
     height: 40px;
 }
@@ -59,8 +44,9 @@
     width: 28%;
     height: 250px;
     margin: 0 10px 10px 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     display: none;
+    cursor: pointer;
 }
 
 .item-row{
@@ -88,23 +74,14 @@
 .filter_btn {
     border: none;
     outline: none;
-    padding-top: 0.55rem;
-    padding-bottom: 0.55rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    margin: 15px;
-    background-color: #f1f1f1;
+    padding: 0.55rem 0.75rem;
+    margin: 10px 15px;
     cursor: pointer;
     background-color: #c2e8c4; 
     color: #025a05; 
-    border-radius: 10%;
+    border-radius: 5px;
   }
   
-/* Add a light grey background on mouse-over */
-/* .filter_btn:hover {
-    background-color: #ddd;
-} */
-
 /* Add a dark background to the active button */
 .filter_btn.active {
     background-color: #666;
@@ -116,14 +93,9 @@
     color: white;
 }
 
-
 .preview_container{
-    width: 40%;
+    width: 750px;
     margin-left: 15px;
-}
-
-.preview-image-div{
-    margin-left: calc(50% - 70px);
 }
 
 .preview-image-div img {
@@ -131,15 +103,14 @@
     height: 300px;
     position: absolute;
     transform-origin: bottom;
+    right: 290px;
 }
 
 #preview-vase img {
     position: absolute;
-    margin-top: 15%;
-    left: 67%;
-    /* margin-left: 9.5%; */
-    
     width: 380px;
+    margin-top: 300px;
+    right: 170px;
 }
 
 .preview-buttons {
@@ -168,9 +139,7 @@
     color:#ffffff;
     margin-left: 25%;
     cursor: pointer;
-    
 }
-
 
 .quantity-input {
     display: flex;
@@ -183,7 +152,6 @@
 }
 
 .quantity-value:focus {
-    border: none;
     border: 1px solid #777777;
 }
 
@@ -194,6 +162,7 @@
 .checkbox{
     visibility: hidden;
 }
+
 .quantity-button {
     border-width: thick;
     text-align: center;
